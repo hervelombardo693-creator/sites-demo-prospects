@@ -1,0 +1,439 @@
+<!doctype html>
+<!--
+  Site de démonstration — Sharlen Fiquet, Fleuriste (Gannat).
+  Nom commercial non connu : « Sharlen Fiquet, Fleuriste » utilisé en attendant.
+  Tous les éléments marqués [à compléter] / « photo à venir » sont à valider avec la cliente.
+-->
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sharlen Fiquet, Fleuriste à Gannat · Compositions, plantes, décoration, événements</title>
+  <meta name="description" content="Sharlen Fiquet, fleuriste au 6 rue des Frères Degand à Gannat (Allier) : compositions florales, plantes, décoration florale, mariages et événements, deuil.">
+  <meta name="theme-color" content="#FBF6EF">
+  <!-- <link rel="canonical" href="[URL du site à compléter]"> -->
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Sharlen Fiquet, Fleuriste">
+  <meta property="og:title" content="Sharlen Fiquet, Fleuriste à Gannat">
+  <meta property="og:description" content="Compositions florales, plantes, décoration et fleurs pour vos événements, au 6 rue des Frères Degand à Gannat.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Illustration de pivoines et d'eucalyptus, Sharlen Fiquet, Fleuriste à Gannat">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('motion');
+      // Filet de sécurité : si le script principal ne démarre pas, tout le contenu reste visible.
+      setTimeout(function () { if (!window.__sfReady) d.classList.remove('motion'); }, 3500);
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    "name": "Sharlen Fiquet, Fleuriste",
+    "founder": { "@type": "Person", "name": "Sharlen Fiquet" },
+    "taxID": "132146036",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6 Rue des Frères Degand",
+      "postalCode": "03800",
+      "addressLocality": "Gannat",
+      "addressRegion": "Allier",
+      "addressCountry": "FR"
+    },
+    "areaServed": "Gannat",
+    "knowsAbout": ["Compositions florales", "Plantes", "Décoration florale", "Fleurs pour mariages et événements"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span></span></div>
+
+  <!-- ============ EN-TÊTE ============ -->
+  <header class="header" id="top">
+    <a class="brand" href="#top" aria-label="Sharlen Fiquet, Fleuriste — retour en haut">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+        <g transform="translate(20 20)">
+          <path d="M0,0 C-9,-2 -10,-12 -3,-15 C-1,-16 1,-16 3,-15 C10,-12 9,-2 0,0Z" transform="rotate(0)" />
+          <path d="M0,0 C-9,-2 -10,-12 -3,-15 C-1,-16 1,-16 3,-15 C10,-12 9,-2 0,0Z" transform="rotate(72)" />
+          <path d="M0,0 C-9,-2 -10,-12 -3,-15 C-1,-16 1,-16 3,-15 C10,-12 9,-2 0,0Z" transform="rotate(144)" />
+          <path d="M0,0 C-9,-2 -10,-12 -3,-15 C-1,-16 1,-16 3,-15 C10,-12 9,-2 0,0Z" transform="rotate(216)" />
+          <path d="M0,0 C-9,-2 -10,-12 -3,-15 C-1,-16 1,-16 3,-15 C10,-12 9,-2 0,0Z" transform="rotate(288)" />
+          <circle r="3.2" />
+        </g>
+      </svg>
+      <span class="brand__name">Sharlen Fiquet</span>
+      <span class="brand__sub">Fleuriste · Gannat</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="nav__toggle-label">Menu</span>
+        <span class="nav__toggle-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+      <ul class="nav__list" id="menu">
+        <li><a href="#manifeste">L'atelier</a></li>
+        <li><a href="#univers">Univers</a></li>
+        <li><a href="#composez">Composez</a></li>
+        <li><a href="#nous-trouver">Nous trouver</a></li>
+        <li class="nav__cta"><a class="btn btn--small" href="#nous-trouver"><span>Prendre contact</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="eyebrow hero__eyebrow" data-hero-fade>
+          <span class="eyebrow__rule" aria-hidden="true"></span>
+          N°01 · Fleuriste à Gannat, Allier
+        </p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="line"><span>L'art de dire</span></span>
+          <span class="line"><span>les choses</span></span>
+          <span class="line line--italic"><span><em>avec des fleurs.</em></span></span>
+        </h1>
+        <p class="hero__lead" data-hero-fade>
+          Compositions florales, plantes, décoration et fleurs pour vos plus beaux moments&nbsp;:
+          Sharlen Fiquet compose pour vous au <strong>6&nbsp;rue des Frères Degand, à Gannat</strong>.
+        </p>
+        <div class="hero__actions" data-hero-fade>
+          <a class="btn" href="#composez" data-magnetic><span>Composer un bouquet</span></a>
+          <a class="link-arrow" href="#univers">Découvrir les univers <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="hero__note" data-hero-fade>
+          <span class="dot" aria-hidden="true"></span> Nouvelle adresse florale, née en novembre&nbsp;2026
+        </p>
+      </div>
+
+      <div class="hero__art">
+        <div class="hero__halo" aria-hidden="true"></div>
+        <svg class="hero__bouquet" id="hero-bouquet" viewBox="0 0 600 720" role="img" aria-labelledby="hero-svg-title">
+          <title id="hero-svg-title">Illustration : une pivoine, des renoncules, une anémone et de l'eucalyptus qui éclosent</title>
+        </svg>
+        <p class="hero__caption" aria-hidden="true"><em>Pivoine, renoncule &amp; eucalyptus</em> · illustration</p>
+      </div>
+
+      <a class="hero__scroll" href="#manifeste" aria-label="Faire défiler vers la suite">
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+        <span>Défiler</span>
+      </a>
+    </section>
+
+    <!-- bandeau défilant -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Compositions</span><i>✿</i><span>Plantes</span><i>✿</i><span>Décoration</span><i>✿</i><span>Mariages &amp; événements</span><i>✿</i><span>Deuil</span><i>✿</i>
+        <span>Compositions</span><i>✿</i><span>Plantes</span><i>✿</i><span>Décoration</span><i>✿</i><span>Mariages &amp; événements</span><i>✿</i><span>Deuil</span><i>✿</i>
+      </div>
+    </div>
+
+    <!-- ============ MANIFESTE ============ -->
+    <section class="manifesto" id="manifeste" aria-labelledby="manifesto-title">
+      <div class="manifesto__grid">
+        <figure class="placeholder placeholder--arch manifesto__portrait" data-reveal>
+          <svg class="placeholder__art" viewBox="0 0 200 260" aria-hidden="true">
+            <path d="M100 250 C 96 190, 104 150, 100 90" class="ph-stem" />
+            <path d="M100 170 C 80 160, 66 140, 70 124 C 88 130, 98 148, 100 170Z" class="ph-leaf" />
+            <path d="M100 140 C 120 130, 134 112, 130 96 C 112 102, 102 120, 100 140Z" class="ph-leaf" />
+            <circle cx="100" cy="80" r="24" class="ph-bloom" />
+            <circle cx="100" cy="80" r="12" class="ph-bloom ph-bloom--in" />
+          </svg>
+          <figcaption>
+            <span class="placeholder__tag">Photo à venir</span>
+            Portrait de Sharlen à l'atelier
+          </figcaption>
+        </figure>
+
+        <div class="manifesto__body">
+          <p class="eyebrow" data-reveal><span class="eyebrow__rule" aria-hidden="true"></span>L'atelier</p>
+          <h2 class="manifesto__title" id="manifesto-title" data-words>
+            Une fleur ne se choisit pas tout à fait&nbsp;: <em>elle se reconnaît.</em>
+          </h2>
+          <div class="manifesto__cols">
+            <p class="dropcap" data-reveal>
+              Un anniversaire, un merci, une naissance, un mariage, un adieu&nbsp;: chaque moment a sa couleur,
+              son parfum, sa façon de se tenir. Sharlen Fiquet compose des bouquets et des décors floraux qui
+              ressemblent à la personne qui les reçoit, et à celle qui les offre.
+            </p>
+            <p data-reveal>
+              Ici, pas de bouquet tout fait qui se ressemble partout&nbsp;: on prend le temps d'écouter, de
+              choisir les teintes, d'équilibrer les volumes. Des compositions généreuses ou minimalistes,
+              des plantes qui vivront longtemps chez vous, et des fleurs pour habiller vos événements.
+            </p>
+          </div>
+          <dl class="manifesto__facts" data-reveal>
+            <div><dt>Adresse</dt><dd>6 rue des Frères Degand<br>03800 Gannat</dd></div>
+            <div><dt>Savoir-faire</dt><dd>Compositions, plantes,<br>décoration, événements</dd></div>
+            <div><dt>Depuis</dt><dd>Novembre 2026</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- transition feuille : crème → forêt -->
+    <div class="leaf-divider" style="--from: var(--cream-0); --to: var(--forest);" aria-hidden="true">
+      <div class="leaf-divider__wipe">
+        <svg class="leaf-divider__edge" viewBox="0 0 100 200" preserveAspectRatio="none"><path d="M0,0 C55,18 100,58 100,100 C100,142 55,182 0,200Z" /></svg>
+        <svg class="leaf-divider__leaf" viewBox="0 0 420 170"><use href="#leaf-big" /></svg>
+        <svg class="leaf-divider__leaf leaf-divider__leaf--small" viewBox="0 0 420 170"><use href="#leaf-big" /></svg>
+      </div>
+    </div>
+
+    <!-- ============ UNIVERS (défilement horizontal) ============ -->
+    <section class="univers" id="univers" aria-labelledby="univers-title">
+      <div class="univers__pin">
+        <div class="univers__head">
+          <p class="eyebrow eyebrow--light" data-reveal><span class="eyebrow__rule" aria-hidden="true"></span>Les univers</p>
+          <h2 class="univers__title" id="univers-title" data-reveal>Cinq univers, <em>une même attention.</em></h2>
+          <p class="univers__hint" aria-hidden="true"><span class="univers__hint-desk">Faites défiler</span><span class="univers__hint-mob">Glissez</span> <span class="arrow">⟶</span></p>
+        </div>
+
+        <div class="univers__viewport" tabindex="0" aria-label="Galerie des univers, défilement horizontal">
+          <ol class="univers__track">
+            <li class="u-card">
+              <div class="u-card__mask u-card__mask--1">
+                <svg class="u-card__illu" data-illu="compositions" viewBox="0 0 320 360" role="img" aria-label="Illustration d'un bouquet rond dans un vase"></svg>
+                <span class="u-card__chip">Photo à venir</span>
+              </div>
+              <div class="u-card__text">
+                <span class="u-card__num">01</span>
+                <h3>Compositions</h3>
+                <p>Bouquets ronds, champêtres ou graphiques&nbsp;: des compositions pensées pour offrir, ou pour se faire plaisir.</p>
+              </div>
+            </li>
+            <li class="u-card">
+              <div class="u-card__mask u-card__mask--2">
+                <svg class="u-card__illu" data-illu="plantes" viewBox="0 0 320 360" role="img" aria-label="Illustration d'une plante verte en pot"></svg>
+                <span class="u-card__chip">Photo à venir</span>
+              </div>
+              <div class="u-card__text">
+                <span class="u-card__num">02</span>
+                <h3>Plantes</h3>
+                <p>Plantes vertes ou fleuries pour la maison, le bureau ou pour offrir, avec les conseils pour en prendre soin.</p>
+              </div>
+            </li>
+            <li class="u-card">
+              <div class="u-card__mask u-card__mask--3">
+                <svg class="u-card__illu" data-illu="decoration" viewBox="0 0 320 360" role="img" aria-label="Illustration d'un centre de table fleuri entre deux bougies"></svg>
+                <span class="u-card__chip">Photo à venir</span>
+              </div>
+              <div class="u-card__text">
+                <span class="u-card__num">03</span>
+                <h3>Décoration</h3>
+                <p>Centres de table, compositions de saison, décor floral pour la maison, une vitrine ou un restaurant.</p>
+              </div>
+            </li>
+            <li class="u-card">
+              <div class="u-card__mask u-card__mask--4">
+                <svg class="u-card__illu" data-illu="mariages" viewBox="0 0 320 360" role="img" aria-label="Illustration d'un bouquet de mariée noué d'un ruban"></svg>
+                <span class="u-card__chip">Photo à venir</span>
+              </div>
+              <div class="u-card__text">
+                <span class="u-card__num">04</span>
+                <h3>Mariages &amp; événements</h3>
+                <p>Bouquet de mariée, boutonnières, décor de salle ou de cérémonie&nbsp;: un univers floral imaginé avec vous pour le jour&nbsp;J.</p>
+              </div>
+            </li>
+            <li class="u-card">
+              <div class="u-card__mask u-card__mask--5">
+                <svg class="u-card__illu" data-illu="deuil" viewBox="0 0 320 360" role="img" aria-label="Illustration d'une couronne de fleurs blanches et de feuillages"></svg>
+                <span class="u-card__chip">Photo à venir</span>
+              </div>
+              <div class="u-card__text">
+                <span class="u-card__num">05</span>
+                <h3>Deuil</h3>
+                <p>Gerbes, couronnes et compositions, préparées avec délicatesse pour accompagner un dernier hommage.</p>
+              </div>
+            </li>
+            <li class="u-card u-card--end">
+              <p class="u-card__end-text"><em>Un projet&nbsp;?</em><br>Parlons-en simplement.</p>
+              <a class="btn btn--light" href="#nous-trouver"><span>Prendre contact</span></a>
+            </li>
+          </ol>
+        </div>
+
+        <div class="univers__progress" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <!-- transition feuille : forêt → poudré -->
+    <div class="leaf-divider leaf-divider--rtl" style="--from: var(--forest); --to: var(--blush); --leaf: var(--powder-deep); --leaf-vein: var(--blush);" aria-hidden="true">
+      <div class="leaf-divider__wipe">
+        <svg class="leaf-divider__edge" viewBox="0 0 100 200" preserveAspectRatio="none"><path d="M0,0 C55,18 100,58 100,100 C100,142 55,182 0,200Z" /></svg>
+        <svg class="leaf-divider__leaf" viewBox="0 0 420 170"><use href="#leaf-big" /></svg>
+        <svg class="leaf-divider__leaf leaf-divider__leaf--small" viewBox="0 0 420 170"><use href="#leaf-big" /></svg>
+      </div>
+    </div>
+
+    <!-- ============ DÉMARCHE ============ -->
+    <section class="steps" aria-labelledby="steps-title">
+      <div class="steps__head">
+        <p class="eyebrow" data-reveal><span class="eyebrow__rule" aria-hidden="true"></span>Comment ça se passe</p>
+        <h2 id="steps-title" data-reveal>Une fleur, <em>une intention.</em></h2>
+      </div>
+      <ol class="steps__list">
+        <li class="step" data-reveal>
+          <svg class="step__icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 18 h44 v26 h-26 l-10 9 v-9 h-8z" /><path d="M20 28 h24 M20 35 h16" /></svg>
+          <span class="step__num">01</span>
+          <h3>Vous racontez</h3>
+          <p>L'occasion, la personne, l'ambiance, les couleurs qu'elle aime. Quelques mots suffisent.</p>
+        </li>
+        <li class="step" data-reveal>
+          <svg class="step__icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56 V30" /><path d="M32 40 C24 38 19 32 20 26 C27 27 31 33 32 40Z" /><circle cx="32" cy="20" r="9" /><circle cx="32" cy="20" r="3.5" /></svg>
+          <span class="step__num">02</span>
+          <h3>Sharlen compose</h3>
+          <p>Une composition pensée pour vous&nbsp;: les fleurs, les feuillages, le volume, l'emballage.</p>
+        </li>
+        <li class="step" data-reveal>
+          <svg class="step__icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M14 26 h36 v28 h-36z" /><path d="M10 18 h44 v8 h-44z" /><path d="M32 18 v36" /><path d="M32 18 C26 8 18 10 20 15 C22 19 32 18 32 18 C32 18 42 19 44 15 C46 10 38 8 32 18Z" /></svg>
+          <span class="step__num">03</span>
+          <h3>Vous offrez</h3>
+          <p>À emporter, ou livré&nbsp;: zone et conditions de livraison <span class="ph">[à compléter]</span>.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ COMPOSEZ VOTRE BOUQUET ============ -->
+    <section class="composer" id="composez" aria-labelledby="composer-title">
+      <div class="composer__head">
+        <p class="eyebrow" data-reveal><span class="eyebrow__rule" aria-hidden="true"></span>Atelier imaginaire</p>
+        <h2 id="composer-title" data-reveal>Composez <em>votre bouquet.</em></h2>
+        <p class="composer__intro" data-reveal>Choisissez trois fleurs et une teinte&nbsp;: le bouquet se compose sous vos yeux. Un simple jeu pour rêver, avant d'en parler à Sharlen.</p>
+      </div>
+
+      <div class="composer__grid">
+        <form class="composer__panel" id="composer-form" onsubmit="return false" data-reveal>
+          <fieldset class="composer__set">
+            <legend><span class="composer__step">1</span> Trois fleurs <span class="composer__count" id="flower-count">3 / 3</span></legend>
+            <div class="flower-picks" id="flower-picks"><!-- rempli par script.js --></div>
+            <p class="composer__help" id="flower-help">Touchez une fleur pour l'ajouter&nbsp;; la plus ancienne laisse sa place.</p>
+          </fieldset>
+
+          <fieldset class="composer__set">
+            <legend><span class="composer__step">2</span> Une teinte</legend>
+            <div class="tints" id="tints"><!-- rempli par script.js --></div>
+          </fieldset>
+
+          <div class="composer__actions">
+            <button type="button" class="btn btn--ghost" id="shuffle" data-magnetic><span>Laisser faire le hasard</span></button>
+          </div>
+        </form>
+
+        <div class="composer__stage" data-reveal>
+          <div class="composer__frame">
+            <svg class="composer__svg" id="bouquet-svg" viewBox="0 0 420 540" role="img" aria-labelledby="bouquet-svg-title">
+              <title id="bouquet-svg-title">Votre bouquet illustré</title>
+            </svg>
+          </div>
+          <div class="composer__card" aria-live="polite">
+            <span class="composer__card-label">Votre bouquet</span>
+            <p class="composer__card-name" id="bouquet-name">« Aube poudrée »</p>
+            <p class="composer__card-desc" id="bouquet-desc">Pivoine, renoncule &amp; anémone, en rose poudré.</p>
+          </div>
+          <p class="composer__disclaimer">Illustration indicative, sans commande ni prix. Pour un vrai bouquet, parlez-en directement à Sharlen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- transition feuille : crème → bordeaux -->
+    <div class="leaf-divider" style="--from: var(--cream-0); --to: var(--bordeaux); --leaf: var(--eucalyptus); --leaf-vein: var(--cream-0);" aria-hidden="true">
+      <div class="leaf-divider__wipe">
+        <svg class="leaf-divider__edge" viewBox="0 0 100 200" preserveAspectRatio="none"><path d="M0,0 C55,18 100,58 100,100 C100,142 55,182 0,200Z" /></svg>
+        <svg class="leaf-divider__leaf" viewBox="0 0 420 170"><use href="#leaf-big" /></svg>
+        <svg class="leaf-divider__leaf leaf-divider__leaf--small" viewBox="0 0 420 170"><use href="#leaf-big" /></svg>
+      </div>
+    </div>
+
+    <!-- ============ NOUS TROUVER ============ -->
+    <section class="visit" id="nous-trouver" aria-labelledby="visit-title">
+      <div class="visit__grid">
+        <div class="visit__text">
+          <p class="eyebrow eyebrow--light" data-reveal><span class="eyebrow__rule" aria-hidden="true"></span>Nous trouver</p>
+          <h2 id="visit-title" data-reveal>Parlons <em>fleurs.</em></h2>
+          <p class="visit__lead" data-reveal>Pour un bouquet, une plante, un mariage ou un hommage, Sharlen vous répond et vous conseille.</p>
+
+          <dl class="visit__list" data-reveal>
+            <div><dt>Adresse</dt><dd>6 rue des Frères Degand<br>03800 Gannat</dd></div>
+            <div><dt>Téléphone</dt><dd><span class="ph ph--light">[à compléter]</span></dd></div>
+            <div><dt>E-mail</dt><dd><span class="ph ph--light">[à compléter]</span></dd></div>
+            <div><dt>Horaires</dt><dd><span class="ph ph--light">[à compléter]</span></dd></div>
+            <div><dt>Livraison</dt><dd><span class="ph ph--light">[à compléter]</span></dd></div>
+            <div><dt>Inspirations</dt><dd><a class="link-light" href="#" data-placeholder-link>Pinterest <span class="ph ph--light">[lien à compléter]</span></a></dd></div>
+          </dl>
+
+          <div class="visit__actions" data-reveal>
+            <a class="btn btn--light" href="https://www.google.com/maps/search/?api=1&amp;query=6%20Rue%20des%20Fr%C3%A8res%20Degand%2C%2003800%20Gannat" target="_blank" rel="noopener" data-magnetic><span>Itinéraire <span class="sr-only">(Google Maps, nouvel onglet)</span></span></a>
+          </div>
+        </div>
+
+        <div class="visit__tag-wrap" data-reveal>
+          <svg class="visit__string" viewBox="0 0 120 200" aria-hidden="true"><path d="M60 0 C 40 60, 90 110, 60 200" /></svg>
+          <div class="gift-tag">
+            <span class="gift-tag__hole" aria-hidden="true"></span>
+            <p class="gift-tag__to">Pour vous,</p>
+            <p class="gift-tag__name">Sharlen Fiquet</p>
+            <p class="gift-tag__role">Fleuriste</p>
+            <svg class="gift-tag__flower" viewBox="0 0 120 120" aria-hidden="true" id="tag-flower"></svg>
+            <p class="gift-tag__addr">6 rue des Frères Degand · Gannat</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <p class="footer__brand"><em>Sharlen Fiquet</em>, Fleuriste</p>
+      <p class="footer__line">Compositions · Plantes · Décoration · Mariages &amp; événements · Deuil</p>
+    </div>
+    <div class="footer__bottom">
+      <p>Sharlen Fiquet, entreprise individuelle (EI) · SIREN 132 146 036 · 6 rue des Frères Degand, 03800 Gannat</p>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="#" data-placeholder-link>Pinterest <span class="ph ph--light">[lien à compléter]</span></a></li>
+      </ul>
+      <p class="footer__demo">Maquette de démonstration · illustrations originales · contenus à valider</p>
+    </div>
+  </footer>
+
+  <!-- Formes partagées -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="leaf-big" viewBox="0 0 420 170">
+        <path class="lb-shape" d="M6,86 C70,14 240,-6 414,84 C246,170 76,160 6,86Z" />
+        <path class="lb-vein" d="M6,86 C150,76 290,78 414,84" />
+        <path class="lb-vein lb-vein--thin" d="M80,82 C110,60 130,46 150,38 M140,80 C170,56 196,40 220,30 M205,80 C236,58 262,44 290,40 M270,81 C296,64 320,54 346,52 M100,84 C130,104 150,118 172,128 M170,82 C200,106 224,122 252,134 M240,82 C270,102 294,116 324,124 M308,83 C330,96 348,104 372,108" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
+<div role="note" style="position:fixed;left:10px;bottom:10px;z-index:2147483647;pointer-events:none;font:600 11px/1.3 system-ui,sans-serif;letter-spacing:.02em;color:#fff;background:rgba(17,17,17,.78);padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)">Maquette de démonstration · site non officiel</div>
+</body>
+</html>

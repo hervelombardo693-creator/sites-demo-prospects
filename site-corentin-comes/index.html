@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corentin Comes, Atelier · Restauration de meubles anciens, sablage et aérogommage à Bellerive-sur-Allier</title>
+  <meta name="description" content="Corentin Comes restaure et revend des meubles anciens à Bellerive-sur-Allier (03). Décapage par sablage ou aérogommage, réparation, finition.">
+  <meta name="theme-color" content="#2f2118">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Corentin Comes, Atelier">
+  <meta property="og:title" content="Corentin Comes, Atelier · Sous la peinture, le bois attend">
+  <meta property="og:description" content="Restauration et revente de meubles anciens, sablage et aérogommage, à Bellerive-sur-Allier.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Archivo:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+
+  <script>
+    /* Active les états « avant animation » seulement si le mouvement est autorisé */
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('motion');
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Corentin Comes",
+    "description": "Restauration et revente de meubles anciens, sablage, aérogommage.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "11 Rue Verlaine",
+      "postalCode": "03700",
+      "addressLocality": "Bellerive-sur-Allier",
+      "addressCountry": "FR"
+    },
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "SIREN",
+      "value": "132000001"
+    }
+  }
+  </script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<!-- ============ Définitions SVG partagées (motifs bois, peinture, meubles) ============ -->
+<svg class="defs" aria-hidden="true" focusable="false" width="0" height="0">
+  <defs>
+    <!-- Bois de noyer, veinage horizontal -->
+    <pattern id="p-wood" width="240" height="48" patternUnits="userSpaceOnUse">
+      <rect width="240" height="48" fill="#7b4f2f"/>
+      <path d="M0 6C60 2 120 11 240 6" stroke="#57361f" stroke-width="1.4" fill="none" opacity=".75"/>
+      <path d="M0 14C80 19 150 9 240 14" stroke="#9a6940" stroke-width="1" fill="none" opacity=".85"/>
+      <path d="M0 22C50 19 140 29 240 22" stroke="#4d2f1a" stroke-width="2" fill="none" opacity=".45"/>
+      <path d="M0 31C70 36 160 26 240 31" stroke="#a06e44" stroke-width=".8" fill="none"/>
+      <path d="M0 40C90 36 150 46 240 40" stroke="#57361f" stroke-width="1.2" fill="none" opacity=".6"/>
+      <path d="M30 26c20-6 50-6 70 0" stroke="#4d2f1a" stroke-width=".8" fill="none" opacity=".5"/>
+    </pattern>
+    <pattern id="p-wood-v" href="#p-wood" patternTransform="rotate(90)"/>
+    <!-- Bois plus sombre pour les façades -->
+    <pattern id="p-wood-dark" width="220" height="44" patternUnits="userSpaceOnUse">
+      <rect width="220" height="44" fill="#6a4127"/>
+      <path d="M0 7C50 3 130 12 220 7" stroke="#47291a" stroke-width="1.5" fill="none" opacity=".7"/>
+      <path d="M0 17C70 22 150 12 220 17" stroke="#8c5c37" stroke-width="1" fill="none"/>
+      <path d="M0 27C60 24 120 32 220 27" stroke="#3f2416" stroke-width="2.2" fill="none" opacity=".5"/>
+      <path d="M0 37C80 41 160 33 220 37" stroke="#8c5c37" stroke-width=".8" fill="none"/>
+    </pattern>
+    <!-- Bois clair (merisier / chêne ciré) -->
+    <pattern id="p-wood-light" width="200" height="40" patternUnits="userSpaceOnUse">
+      <rect width="200" height="40" fill="#b27a48"/>
+      <path d="M0 6C50 2 120 10 200 6" stroke="#8a5a31" stroke-width="1.2" fill="none" opacity=".8"/>
+      <path d="M0 15C60 19 130 11 200 15" stroke="#cc9662" stroke-width="1" fill="none"/>
+      <path d="M0 25C40 22 120 30 200 25" stroke="#7d4f2a" stroke-width="1.8" fill="none" opacity=".5"/>
+      <path d="M0 34C70 37 140 31 200 34" stroke="#cc9662" stroke-width=".8" fill="none"/>
+    </pattern>
+    <pattern id="p-wood-light-v" href="#p-wood-light" patternTransform="rotate(90)"/>
+    <!-- Bois brut, grisé (sous les éclats de peinture) -->
+    <pattern id="p-wood-raw" width="200" height="36" patternUnits="userSpaceOnUse">
+      <rect width="200" height="36" fill="#8c6c4e"/>
+      <path d="M0 8C60 4 120 12 200 8" stroke="#6b5039" stroke-width="1.2" fill="none"/>
+      <path d="M0 20C70 24 140 16 200 20" stroke="#a5866a" stroke-width="1" fill="none"/>
+      <path d="M0 29C60 26 130 33 200 29" stroke="#5f4632" stroke-width="1.6" fill="none" opacity=".6"/>
+    </pattern>
+    <!-- Peinture vert-de-gris -->
+    <pattern id="p-paint-sage" width="90" height="30" patternUnits="userSpaceOnUse">
+      <rect width="90" height="30" fill="#a3b39d"/>
+      <path d="M4 6h34M48 9h30M10 17h42M60 21h24M2 26h30" stroke="#b7c4b0" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+      <path d="M30 12h22M70 14h16M40 25h26" stroke="#91a18b" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+    </pattern>
+    <!-- Peinture blanche fatiguée -->
+    <pattern id="p-paint-white" width="90" height="30" patternUnits="userSpaceOnUse">
+      <rect width="90" height="30" fill="#e6dfcf"/>
+      <path d="M4 6h34M48 9h30M10 17h42M60 21h24M2 26h30" stroke="#f2ede2" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+      <path d="M30 12h22M70 14h16M40 25h26" stroke="#d2c9b5" stroke-width="2" stroke-linecap="round"/>
+    </pattern>
+    <!-- Vieux vernis encrassé -->
+    <pattern id="p-vernis" width="160" height="40" patternUnits="userSpaceOnUse">
+      <rect width="160" height="40" fill="#3a2316"/>
+      <path d="M0 9C40 5 100 13 160 9" stroke="#5c3a20" stroke-width="2" fill="none" opacity=".8"/>
+      <path d="M0 24C50 28 110 20 160 24" stroke="#6e4719" stroke-width="1.4" fill="none" opacity=".6"/>
+      <path d="M0 33C40 31 120 37 160 33" stroke="#2a180e" stroke-width="2" fill="none"/>
+    </pattern>
+    <!-- Craquelures -->
+    <pattern id="p-crackle" width="70" height="60" patternUnits="userSpaceOnUse">
+      <path d="M0 18l14 4 9-10 16 6 12-8 19 5M14 22l-3 16 12 9 18-4 6 12M39 18l2 14 15 6 14-3M23 47l-8 13M56 38l4 22M0 44l11-6" stroke="#160c06" stroke-width="1" fill="none" opacity=".75"/>
+    </pattern>
+    <!-- Paille tressée -->
+    <pattern id="p-rush" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="12" fill="#c9994a"/>
+      <path d="M0 0h12M0 6h12" stroke="#9a6f2c" stroke-width="1.4"/>
+      <path d="M6 0v6M0 6v6M12 6v6" stroke="#e0b465" stroke-width=".9"/>
+    </pattern>
+    <pattern id="p-rush-worn" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="12" fill="#8d7246"/>
+      <path d="M0 0h12M0 6h12" stroke="#5e4a2b" stroke-width="1.6"/>
+      <path d="M6 0v6" stroke="#a88c5c" stroke-width=".8"/>
+    </pattern>
+
+    <linearGradient id="g-brass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2d388"/><stop offset=".5" stop-color="#b98634"/><stop offset="1" stop-color="#6d4718"/>
+    </linearGradient>
+    <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a5b2b8"/><stop offset=".55" stop-color="#6c7c84"/><stop offset="1" stop-color="#3f4c54"/>
+    </linearGradient>
+    <linearGradient id="g-sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="g-grime" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a0f08" stop-opacity="0"/><stop offset="1" stop-color="#1a0f08" stop-opacity=".45"/>
+    </linearGradient>
+    <radialGradient id="g-shadow">
+      <stop offset="0" stop-color="#1d130c" stop-opacity=".38"/><stop offset="1" stop-color="#1d130c" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Masques d'écaillage (bruit seuillé) -->
+    <filter id="f-chips1" x="0" y="0" width="400" height="360" filterUnits="userSpaceOnUse">
+      <feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="3" seed="4"/>
+      <feColorMatrix values="11 0 0 0 -3.7  11 0 0 0 -3.7  11 0 0 0 -3.7  0 0 0 0 1"/>
+    </filter>
+    <filter id="f-chips2" x="0" y="0" width="400" height="360" filterUnits="userSpaceOnUse">
+      <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="3" seed="11"/>
+      <feColorMatrix values="12 0 0 0 -4.2  12 0 0 0 -4.2  12 0 0 0 -4.2  0 0 0 0 1"/>
+    </filter>
+    <mask id="m-chips1" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="360">
+      <rect width="400" height="360" fill="#fff" filter="url(#f-chips1)"/>
+    </mask>
+    <mask id="m-chips2" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="360">
+      <rect width="400" height="360" fill="#fff" filter="url(#f-chips2)"/>
+    </mask>
+
+    <!-- ===== Meubles (couleurs pilotées par variables CSS) ===== -->
+    <symbol id="s-commode" viewBox="0 0 400 360">
+      <path class="f-edge" d="M60 310h22l-5 38h-12z"/>
+      <path class="f-edge" d="M318 310h22l-4 38h-12z"/>
+      <rect class="f-body" x="54" y="88" width="292" height="214"/>
+      <path class="f-body s-line" d="M54 300h292v12c-30 0-46 4-62 12-28 10-140 10-168 0-16-8-32-12-62-12z"/>
+      <rect class="f-body s-line" x="38" y="68" width="324" height="22" rx="4"/>
+      <rect class="f-edge" x="54" y="90" width="292" height="5" opacity=".55"/>
+      <rect class="f-panel s-line" x="70" y="104" width="260" height="58" rx="3"/>
+      <rect class="f-panel s-line" x="70" y="170" width="260" height="58" rx="3"/>
+      <rect class="f-panel s-line" x="70" y="236" width="260" height="58" rx="3"/>
+      <circle class="f-hw" cx="128" cy="133" r="6.5"/><circle class="f-hw" cx="272" cy="133" r="6.5"/>
+      <circle class="f-hw" cx="128" cy="199" r="6.5"/><circle class="f-hw" cx="272" cy="199" r="6.5"/>
+      <circle class="f-hw" cx="128" cy="265" r="6.5"/><circle class="f-hw" cx="272" cy="265" r="6.5"/>
+      <path class="f-hw" d="M200 124a6 6 0 0 1 3.5 10.8l2 7.2h-11l2-7.2A6 6 0 0 1 200 124z"/>
+      <path class="f-hw" d="M200 190a6 6 0 0 1 3.5 10.8l2 7.2h-11l2-7.2A6 6 0 0 1 200 190z"/>
+      <path class="f-hw" d="M200 256a6 6 0 0 1 3.5 10.8l2 7.2h-11l2-7.2A6 6 0 0 1 200 256z"/>
+    </symbol>
+
+    <symbol id="s-chaise" viewBox="0 0 400 360">
+      <rect class="f-edge" x="134" y="236" width="12" height="98" rx="3"/>
+      <rect class="f-edge" x="254" y="236" width="12" height="98" rx="3"/>
+      <rect class="f-edge" x="146" y="318" width="108" height="7" rx="3"/>
+      <rect class="f-post s-line" x="122" y="40" width="18" height="198" rx="6"/>
+      <rect class="f-post s-line" x="260" y="40" width="18" height="198" rx="6"/>
+      <circle class="f-body s-line" cx="131" cy="34" r="11"/>
+      <circle class="f-body s-line" cx="269" cy="34" r="11"/>
+      <path class="f-body s-line" d="M140 64q60 12 120 0v18q-60 12-120 0z"/>
+      <path class="f-body s-line" d="M140 106q60 12 120 0v18q-60 12-120 0z"/>
+      <path class="f-body s-line" d="M140 148q60 12 120 0v18q-60 12-120 0z"/>
+      <path class="f-seat s-line" d="M104 204h192l16 32H88z"/>
+      <rect class="f-body s-line" x="86" y="234" width="228" height="15" rx="3"/>
+      <rect class="f-post s-line" x="98" y="249" width="18" height="95" rx="4"/>
+      <rect class="f-post s-line" x="284" y="249" width="18" height="95" rx="4"/>
+      <rect class="f-body s-line" x="116" y="300" width="168" height="9" rx="4"/>
+    </symbol>
+
+    <symbol id="s-buffet" viewBox="0 0 400 360">
+      <rect class="f-edge" x="46" y="310" width="30" height="26" rx="9"/>
+      <rect class="f-edge" x="324" y="310" width="30" height="26" rx="9"/>
+      <rect class="f-body s-line" x="36" y="294" width="328" height="20" rx="3"/>
+      <rect class="f-body" x="44" y="104" width="312" height="192"/>
+      <rect class="f-body s-line" x="28" y="84" width="344" height="22" rx="4"/>
+      <rect class="f-edge" x="44" y="106" width="312" height="5" opacity=".5"/>
+      <rect class="f-panel s-line" x="58" y="118" width="138" height="40" rx="3"/>
+      <rect class="f-panel s-line" x="204" y="118" width="138" height="40" rx="3"/>
+      <rect class="f-panel s-line" x="58" y="166" width="138" height="120" rx="3"/>
+      <rect class="f-panel s-line" x="204" y="166" width="138" height="120" rx="3"/>
+      <rect class="f-inset s-line" x="72" y="180" width="110" height="92" rx="14"/>
+      <rect class="f-inset s-line" x="218" y="180" width="110" height="92" rx="14"/>
+      <rect class="f-hw" x="112" y="134" width="30" height="7" rx="3.5"/>
+      <rect class="f-hw" x="258" y="134" width="30" height="7" rx="3.5"/>
+      <path class="f-hw" d="M188 216a5 5 0 0 1 3 9l1.6 6h-9.2l1.6-6a5 5 0 0 1 3-9z"/>
+      <path class="f-hw" d="M212 216a5 5 0 0 1 3 9l1.6 6h-9.2l1.6-6a5 5 0 0 1 3-9z"/>
+    </symbol>
+
+    <!-- Tampon / logo -->
+    <symbol id="s-stamp" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="3"/>
+      <circle cx="60" cy="60" r="40" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path id="stamp-arc" d="M60 60m-47 0a47 47 0 1 1 94 0a47 47 0 1 1-94 0" fill="none"/>
+      <text font-family="Archivo Narrow, sans-serif" font-weight="700" font-size="10.2" letter-spacing="2.6" fill="currentColor">
+        <textPath href="#stamp-arc">RESTAURATION · SABLAGE · AÉROGOMMAGE ·</textPath>
+      </text>
+      <text x="60" y="70" text-anchor="middle" font-family="Zilla Slab, serif" font-weight="700" font-size="30" fill="currentColor">CC</text>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ En-tête ============ -->
+<header class="header" id="top">
+  <div class="header__bg" aria-hidden="true"></div>
+  <a class="brand" href="#top" aria-label="Corentin Comes, Atelier — retour en haut">
+    <svg class="brand__mark" aria-hidden="true"><use href="#s-stamp"/></svg>
+    <span class="brand__txt"><strong>Corentin Comes</strong><span>Atelier</span></span>
+  </a>
+  <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="nav" id="nav" aria-label="Navigation principale">
+    <a href="#atelier">L'atelier</a>
+    <a href="#avant-apres">Avant / après</a>
+    <a href="#methode">Méthode</a>
+    <a href="#techniques">Sablage ou aéro ?</a>
+    <a href="#a-vendre">À vendre</a>
+    <a class="nav__cta" href="#contact">Contact</a>
+  </nav>
+  <div class="progress" aria-hidden="true"><span></span></div>
+</header>
+
+<main id="contenu">
+
+<!-- ============ HERO : aérogommage interactif ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__text">
+    <p class="kicker" data-hero>Atelier de restauration · Bellerive-sur-Allier</p>
+    <h1 id="hero-title" class="hero__title">
+      <span class="line"><span data-hero>Sous la peinture,</span></span>
+      <span class="line"><span data-hero><em>le bois</em> attend.</span></span>
+    </h1>
+    <p class="hero__lead" data-hero>
+      Corentin Comes restaure et revend des meubles anciens. Décapage par sablage ou aérogommage,
+      réparation, finition&nbsp;: chaque pièce retrouve sa matière, sans faux-semblant.
+    </p>
+    <div class="hero__ctas" data-hero>
+      <a class="btn btn--rust" href="#contact"><span>Confier un meuble</span></a>
+      <a class="btn btn--ghost" href="#avant-apres"><span>Voir les avant / après</span></a>
+    </div>
+    <ul class="hero__facts" data-hero>
+      <li>Entreprise individuelle</li>
+      <li>Nouvel atelier · 2026</li>
+      <li>11 rue Verlaine</li>
+    </ul>
+  </div>
+
+  <div class="stage" data-hero-stage>
+    <div class="stage__wall" aria-hidden="true"></div>
+    <div class="stage__tag" aria-hidden="true">
+      <span class="stage__tag-hole"></span>
+      <span class="stage__tag-ref">N° 001</span>
+      <span class="stage__tag-name">Commode</span>
+      <span class="stage__tag-state" data-state>état&nbsp;: avant</span>
+    </div>
+    <svg class="stage__stamp" aria-hidden="true"><use href="#s-stamp"/></svg>
+    <canvas id="decap" class="stage__canvas" width="560" height="600" role="img"
+      aria-label="Illustration interactive : une commode ancienne couverte d'une vieille peinture vert-de-gris écaillée. Passez la souris ou le doigt dessus pour la décaper et révéler le bois.">
+      Commode ancienne couverte de peinture écaillée.
+    </canvas>
+    <p class="stage__hint" data-hint aria-hidden="true"><span class="hint-desk">Passez la buse sur la commode</span><span class="hint-touch">Frottez la commode du doigt</span></p>
+    <div class="stage__controls">
+      <div class="meter" aria-live="polite">
+        <span class="meter__label">Bois mis à nu</span>
+        <span class="meter__bar" aria-hidden="true"><span data-meter-bar></span></span>
+        <span class="meter__val" data-meter>0&nbsp;%</span>
+      </div>
+      <button class="btn btn--small btn--rust" type="button" data-decap-all><span>Tout décaper</span></button>
+      <button class="btn btn--small btn--ghost" type="button" data-repaint><span>Repeindre</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- Bandeau défilant -->
+<div class="marquee-wrap" aria-hidden="true"><div class="marquee">
+  <div class="marquee__track">
+    <span>Restauration</span><i>✦</i><span>Revente de meubles anciens</span><i>✦</i><span>Sablage</span><i>✦</i><span>Aérogommage</span><i>✦</i><span>Bellerive-sur-Allier</span><i>✦</i>
+    <span>Restauration</span><i>✦</i><span>Revente de meubles anciens</span><i>✦</i><span>Sablage</span><i>✦</i><span>Aérogommage</span><i>✦</i><span>Bellerive-sur-Allier</span><i>✦</i>
+  </div>
+</div></div>
+
+<!-- ============ 01 L'atelier ============ -->
+<section class="section atelier" id="atelier" aria-labelledby="atelier-title">
+  <div class="wrap atelier__grid">
+    <div class="atelier__intro">
+      <p class="label" data-reveal>N°01 — L'atelier</p>
+      <h2 id="atelier-title" class="h2" data-reveal>Restaurer, <em>pas maquiller.</em></h2>
+      <p class="lead" data-reveal>
+        Une commode fatiguée, une chaise repeinte plusieurs fois, un buffet noirci par les vieux vernis&nbsp;:
+        sous les couches, il y a souvent un beau bois. Le travail de l'atelier, c'est d'aller le chercher
+        avec la bonne technique, puis de lui rendre une finition qui dure.
+      </p>
+      <div class="fiche" data-reveal>
+        <p class="fiche__title">Fiche d'identité</p>
+        <dl>
+          <div><dt>Entreprise</dt><dd>Corentin Comes, entreprise individuelle (EI)</dd></div>
+          <div><dt>SIREN</dt><dd>132 000 001</dd></div>
+          <div><dt>Adresse</dt><dd>11 Rue Verlaine, 03700 Bellerive-sur-Allier</dd></div>
+          <div><dt>Activité</dt><dd>Restauration et revente de meubles anciens, sablage, aérogommage</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="atelier__side">
+      <figure class="photo-ph photo-ph--tall" data-reveal>
+        <div class="photo-ph__inner">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16h8l3-5h10l3 5h8v22H8z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="24" cy="26" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+          <span>Photo à venir</span>
+          <small>L'atelier, rue Verlaine</small>
+        </div>
+      </figure>
+    </div>
+
+    <ul class="services">
+      <li class="service" data-reveal>
+        <span class="service__num">A</span>
+        <svg class="service__ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 50h44M16 50V26h32v24M20 26v-8h24v8M28 36h8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Restauration</h3>
+        <p>Diagnostic, décapage, réparations, finition. Pour un meuble de famille comme pour une trouvaille de brocante.</p>
+      </li>
+      <li class="service" data-reveal>
+        <span class="service__num">B</span>
+        <svg class="service__ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M44 10l10 10-16 16-10-10zM28 26L12 42M20 46l-2 2M14 40l-2 2M24 50l-1 3M10 36l-3 1" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Sablage &amp; aérogommage</h3>
+        <p>Deux techniques de décapage par projection, choisies selon la matière&nbsp;: plus énergique pour le métal, plus douce pour le bois.</p>
+      </li>
+      <li class="service" data-reveal>
+        <span class="service__num">C</span>
+        <svg class="service__ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M14 30l18-18h18v18L32 48zM42 20h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Revente</h3>
+        <p>Des meubles anciens restaurés à l'atelier, prêts à reprendre du service chez vous.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 02 Avant / Après ============ -->
+<section class="section ba-section" id="avant-apres" aria-labelledby="ba-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="label" data-reveal>N°02 — Avant / après</p>
+      <h2 id="ba-title" class="h2" data-reveal>Trois pièces, <em>deux vies.</em></h2>
+      <p class="lead" data-reveal>Faites glisser la poignée. Ces illustrations montrent le type de résultat recherché&nbsp;; les photos des vraies restaurations de l'atelier prendront leur place.</p>
+    </header>
+
+    <div class="ba-grid">
+      <!-- Commode -->
+      <figure class="ba" data-ba data-reveal>
+        <div class="ba__stage">
+          <svg class="ba__layer" viewBox="0 0 400 360" aria-hidden="true">
+            <ellipse cx="200" cy="348" rx="170" ry="10" fill="url(#g-shadow)"/>
+            <use href="#s-commode" style="--body:url(#p-wood);--panel:url(#p-wood-dark);--edge:#3a2416;--hw:url(#g-brass);--line:#3a2416"/>
+            <rect x="38" y="68" width="324" height="8" rx="4" fill="url(#g-sheen)" opacity=".5"/>
+            <path d="M80 110h160M80 176h120M80 242h150" stroke="#fff" stroke-opacity=".18" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div class="ba__before">
+            <div class="ba__before-inner">
+              <svg class="ba__layer" viewBox="0 0 400 360" aria-hidden="true">
+                <ellipse cx="200" cy="348" rx="170" ry="10" fill="url(#g-shadow)"/>
+                <use href="#s-commode" style="--body:url(#p-wood-raw);--panel:url(#p-wood-raw);--edge:#4a3626;--hw:#5d4a33;--line:#4a3626"/>
+                <g mask="url(#m-chips1)">
+                  <use href="#s-commode" style="--body:url(#p-paint-sage);--panel:url(#p-paint-sage);--edge:#7f8f7a;--hw:#93a38d;--line:#6f7f6a"/>
+                </g>
+                <path d="M96 120l40 18M250 186l50-10M110 250l30 26M300 118l-22 30" stroke="#e9e4d4" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>
+                <ellipse cx="300" cy="80" rx="26" ry="5" fill="#5b4a33" opacity=".35"/>
+              </svg>
+            </div>
+          </div>
+          <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après : commode">
+          <div class="ba__handle" aria-hidden="true"><span class="ba__knob"></span></div>
+          <span class="ba__tag ba__tag--before" aria-hidden="true">Avant</span>
+          <span class="ba__tag ba__tag--after" aria-hidden="true">Après</span>
+        </div>
+        <figcaption><strong>Commode</strong> — peinture écaillée retirée, bois ciré. <em>Illustration · photo à venir</em></figcaption>
+      </figure>
+
+      <!-- Chaise -->
+      <figure class="ba" data-ba data-reveal>
+        <div class="ba__stage">
+          <svg class="ba__layer" viewBox="0 0 400 360" aria-hidden="true">
+            <ellipse cx="200" cy="346" rx="130" ry="9" fill="url(#g-shadow)"/>
+            <use href="#s-chaise" style="--body:url(#p-wood-light);--post:url(#p-wood-light-v);--edge:#6d4524;--seat:url(#p-rush);--line:#5a3a1e"/>
+            <path d="M126 50v170M264 50v170" stroke="#fff" stroke-opacity=".3" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div class="ba__before">
+            <div class="ba__before-inner">
+              <svg class="ba__layer" viewBox="0 0 400 360" aria-hidden="true">
+                <ellipse cx="200" cy="346" rx="130" ry="9" fill="url(#g-shadow)"/>
+                <use href="#s-chaise" style="--body:url(#p-wood-raw);--post:url(#p-wood-raw);--edge:#4a3626;--seat:url(#p-rush-worn);--line:#4a3626"/>
+                <g mask="url(#m-chips2)">
+                  <use href="#s-chaise" style="--body:url(#p-paint-white);--post:url(#p-paint-white);--edge:#bdb5a3;--seat:url(#p-rush-worn);--line:#9c947f"/>
+                </g>
+                <path d="M150 214l24 14 20-8M230 212l16 18M196 222l-6 12" stroke="#3a2a17" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après : chaise">
+          <div class="ba__handle" aria-hidden="true"><span class="ba__knob"></span></div>
+          <span class="ba__tag ba__tag--before" aria-hidden="true">Avant</span>
+          <span class="ba__tag ba__tag--after" aria-hidden="true">Après</span>
+        </div>
+        <figcaption><strong>Chaise</strong> — peinture blanche retirée, paille refaite. <em>Illustration · photo à venir</em></figcaption>
+      </figure>
+
+      <!-- Buffet -->
+      <figure class="ba" data-ba data-reveal>
+        <div class="ba__stage">
+          <svg class="ba__layer" viewBox="0 0 400 360" aria-hidden="true">
+            <ellipse cx="200" cy="342" rx="175" ry="10" fill="url(#g-shadow)"/>
+            <use href="#s-buffet" style="--body:url(#p-wood);--panel:url(#p-wood-dark);--inset:url(#p-wood);--edge:#3a2416;--hw:url(#g-brass);--line:#3a2416"/>
+            <rect x="28" y="84" width="344" height="8" rx="4" fill="url(#g-sheen)" opacity=".5"/>
+            <path d="M84 192l40-6M230 192l40-6" stroke="#fff" stroke-opacity=".22" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div class="ba__before">
+            <div class="ba__before-inner">
+              <svg class="ba__layer" viewBox="0 0 400 360" aria-hidden="true">
+                <ellipse cx="200" cy="342" rx="175" ry="10" fill="url(#g-shadow)"/>
+                <use href="#s-buffet" style="--body:url(#p-vernis);--panel:url(#p-vernis);--inset:url(#p-vernis);--edge:#1e120a;--hw:#5b4a2c;--line:#1e120a"/>
+                <use href="#s-buffet" style="--body:url(#p-crackle);--panel:url(#p-crackle);--inset:url(#p-crackle);--edge:transparent;--hw:transparent;--line:transparent"/>
+                <rect x="28" y="84" width="344" height="230" fill="url(#g-grime)"/>
+                <path d="M70 120c30 10 60-6 90 4M230 250c20-12 60-10 90 2" stroke="#8a6a2a" stroke-opacity=".35" stroke-width="6" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après : buffet">
+          <div class="ba__handle" aria-hidden="true"><span class="ba__knob"></span></div>
+          <span class="ba__tag ba__tag--before" aria-hidden="true">Avant</span>
+          <span class="ba__tag ba__tag--after" aria-hidden="true">Après</span>
+        </div>
+        <figcaption><strong>Buffet</strong> — vernis encrassé retiré, noyer retrouvé. <em>Illustration · photo à venir</em></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 Méthode ============ -->
+<section class="section methode" id="methode" aria-labelledby="methode-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="label label--light" data-reveal>N°03 — La méthode</p>
+      <h2 id="methode-title" class="h2" data-reveal>Quatre étapes, <em>dans l'ordre.</em></h2>
+    </header>
+
+    <ol class="steps">
+      <li class="steps__rail" aria-hidden="true"><span></span></li>
+
+      <li class="step" data-step>
+        <div class="step__txt" data-reveal>
+          <span class="step__num">01</span>
+          <h3>Diagnostic</h3>
+          <p>On regarde la pièce de près&nbsp;: essence du bois, état de la structure, nature des couches de peinture ou de vernis. C'est là que se décide la méthode.</p>
+        </div>
+        <div class="step__ill" data-reveal>
+          <svg viewBox="0 0 240 160" aria-hidden="true">
+            <rect x="16" y="28" width="132" height="104" rx="4" fill="url(#p-wood)" stroke="#2a1a10" stroke-width="2"/>
+            <path d="M16 28h76l-10 22 18 16-14 22 6 44H16z" fill="url(#p-paint-sage)"/>
+            <circle cx="82" cy="80" r="5" fill="url(#g-brass)"/>
+            <g transform="translate(160 26)">
+              <rect width="68" height="110" rx="3" fill="#e3d2b4" stroke="#8a6a44" stroke-width="1.5"/>
+              <circle cx="34" cy="10" r="4" fill="#2f2118"/>
+              <g fill="none" stroke="#8a6a44" stroke-width="1.5"><rect x="8" y="30" width="12" height="12" rx="2"/><rect x="8" y="58" width="12" height="12" rx="2"/><rect x="8" y="86" width="12" height="12" rx="2"/></g>
+              <g fill="#8a6a44"><rect x="26" y="34" width="34" height="3" rx="1.5"/><rect x="26" y="62" width="28" height="3" rx="1.5"/><rect x="26" y="90" width="32" height="3" rx="1.5"/></g>
+              <path class="chk chk1" d="M9 36l4 4 9-10" fill="none" stroke="#b5532a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="chk chk2" d="M9 64l4 4 9-10" fill="none" stroke="#b5532a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="chk chk3" d="M9 92l4 4 9-10" fill="none" stroke="#b5532a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <g transform="translate(58 66)">
+              <g class="loupe">
+                <circle r="22" fill="#fff" fill-opacity=".2" stroke="#34424a" stroke-width="6"/>
+                <path d="M-10-8a14 14 0 0 1 12-6" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".8"/>
+                <path d="M16 16l18 18" stroke="#34424a" stroke-width="9" stroke-linecap="round"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </li>
+
+      <li class="step" data-step>
+        <div class="step__txt" data-reveal>
+          <span class="step__num">02</span>
+          <h3>Décapage</h3>
+          <p>Par sablage ou par aérogommage selon la matière, en adaptant l'abrasif et la pression à la pièce, pour retirer peintures et vernis.</p>
+        </div>
+        <div class="step__ill" data-reveal>
+          <svg viewBox="0 0 240 160" aria-hidden="true">
+            <rect x="20" y="70" width="200" height="72" rx="3" fill="url(#p-wood)" stroke="#2a1a10" stroke-width="2"/>
+            <rect class="peel" x="21" y="71" width="198" height="70" fill="url(#p-paint-sage)"/>
+            <g transform="translate(20 0)">
+              <g class="noz">
+                <g class="pts">
+                  <rect class="pt" x="-2" y="64" width="3" height="3" fill="#c5d1bf" style="--x:-18px;--y:-26px"/>
+                  <rect class="pt" x="0" y="64" width="2.5" height="2.5" fill="#a87a4c" style="--x:-30px;--y:-12px"/>
+                  <rect class="pt" x="1" y="64" width="3" height="3" fill="#e6dccb" style="--x:-8px;--y:-34px"/>
+                  <rect class="pt" x="-1" y="64" width="2" height="2" fill="#9fb09a" style="--x:-36px;--y:-28px"/>
+                  <rect class="pt" x="2" y="64" width="2.5" height="2.5" fill="#7a5030" style="--x:-22px;--y:-40px"/>
+                  <rect class="pt" x="0" y="64" width="2" height="2" fill="#c5d1bf" style="--x:-44px;--y:-6px"/>
+                </g>
+                <path d="M4 60l-2-14 10 0z" fill="#e9e3d6" opacity=".55"/>
+                <rect x="-2" y="18" width="16" height="30" rx="3" fill="url(#g-metal)" transform="rotate(20 6 33)"/>
+                <path d="M10 18c10-10 24-14 44-14" stroke="#2b2b2b" stroke-width="7" fill="none" stroke-linecap="round"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </li>
+
+      <li class="step" data-step>
+        <div class="step__txt" data-reveal>
+          <span class="step__num">03</span>
+          <h3>Réparation</h3>
+          <p>Assemblages recollés, pièces de bois reprises, tiroirs qui coulissent à nouveau&nbsp;: le meuble redevient solide avant de redevenir beau.</p>
+        </div>
+        <div class="step__ill" data-reveal>
+          <svg viewBox="0 0 240 160" aria-hidden="true">
+            <rect x="24" y="40" width="196" height="10" rx="3" fill="url(#g-metal)"/>
+            <rect x="24" y="40" width="12" height="96" rx="3" fill="url(#g-metal)"/>
+            <rect x="30" y="74" width="86" height="50" rx="2" fill="url(#p-wood)" stroke="#2a1a10" stroke-width="2"/>
+            <rect x="102" y="88" width="14" height="22" fill="#1e120a"/>
+            <g class="join">
+              <rect x="124" y="74" width="80" height="50" rx="2" fill="url(#p-wood-dark)" stroke="#2a1a10" stroke-width="2"/>
+              <rect x="108" y="90" width="18" height="18" fill="url(#p-wood-dark)" stroke="#2a1a10" stroke-width="1.5"/>
+              <rect x="204" y="50" width="12" height="80" rx="3" fill="url(#g-metal)"/>
+              <rect x="210" y="96" width="22" height="8" rx="3" fill="#b5532a"/>
+            </g>
+            <circle class="drop" cx="114" cy="56" r="4.5" fill="#efe6cf" stroke="#c9b98f"/>
+          </svg>
+        </div>
+      </li>
+
+      <li class="step" data-step>
+        <div class="step__txt" data-reveal>
+          <span class="step__num">04</span>
+          <h3>Finition</h3>
+          <p>Cire, huile ou vernis selon l'usage du meuble et l'aspect souhaité. Le bois est nourri, protégé, prêt à servir.</p>
+        </div>
+        <div class="step__ill" data-reveal>
+          <svg viewBox="0 0 240 160" aria-hidden="true">
+            <defs><clipPath id="clip-fin"><rect x="20" y="40" width="200" height="96" rx="3"/></clipPath></defs>
+            <rect x="20" y="40" width="200" height="96" rx="3" fill="url(#p-wood)" stroke="#2a1a10" stroke-width="2"/>
+            <g clip-path="url(#clip-fin)"><rect class="sheen" x="-30" y="30" width="34" height="120" fill="url(#g-sheen)" transform="skewX(-18)"/></g>
+            <g transform="translate(50 70)">
+              <g class="pad">
+                <path d="M0 14c0-12 10-18 26-18s28 6 28 18-12 16-28 16S0 26 0 14z" fill="#efe7d6" stroke="#b8a98a" stroke-width="1.5"/>
+                <path d="M12 6c8-4 22-4 30 0M10 16c10 3 26 3 36 0" stroke="#c9bb9c" stroke-width="1.4" fill="none"/>
+              </g>
+            </g>
+            <path class="spark s1" d="M178 58l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#f6e7c0"/>
+            <path class="spark s2" d="M196 104l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#f6e7c0"/>
+            <path class="spark s3" d="M44 116l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="#f6e7c0"/>
+          </svg>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 04 Sablage vs aérogommage ============ -->
+<section class="section vs" id="techniques" aria-labelledby="vs-title">
+  <div class="wrap">
+    <header class="section__head section__head--center">
+      <p class="label" data-reveal>N°04 — Deux techniques</p>
+      <h2 id="vs-title" class="h2" data-reveal>Sablage <em>ou</em> aérogommage&nbsp;?</h2>
+      <p class="lead" data-reveal>Deux façons de décaper en projetant un abrasif. La différence tient surtout à la force du jet et à la finesse du grain.</p>
+    </header>
+  </div>
+
+  <div class="vs__split" data-vs>
+    <article class="vs__half vs__half--sab" data-vs-half="left">
+      <p class="vs__over">Le jet énergique</p>
+      <h3>Sablage</h3>
+      <div class="vs__ill">
+        <svg viewBox="0 0 320 200" aria-hidden="true">
+          <rect x="176" y="20" width="132" height="164" rx="4" fill="url(#g-metal)"/>
+          <path d="M176 20h70c-6 20 10 30-4 52 14 18-6 40 8 62-10 18 4 32-8 50h-66z" fill="#8a4a24" opacity=".85"/>
+          <path d="M190 40c8 6 4 14 12 18M200 110c6 4 10 12 4 18M186 150c10-2 14 6 20 4" stroke="#5e2d14" stroke-width="2" fill="none"/>
+          <g class="grains">
+            <rect class="gr" x="84" y="96" width="4" height="4" fill="#d8d0c0" style="--dx:92px;--dy:-30px;--d:-.05s"/>
+            <rect class="gr" x="84" y="98" width="5" height="5" fill="#b9b0a0" style="--dx:96px;--dy:-10px;--d:-.12s"/>
+            <rect class="gr" x="84" y="100" width="4" height="4" fill="#e6dfd0" style="--dx:94px;--dy:8px;--d:-.2s"/>
+            <rect class="gr" x="84" y="100" width="3" height="3" fill="#d8d0c0" style="--dx:92px;--dy:24px;--d:-.28s"/>
+            <rect class="gr" x="84" y="97" width="5" height="5" fill="#a59c8b" style="--dx:96px;--dy:-22px;--d:-.33s"/>
+            <rect class="gr" x="84" y="99" width="4" height="4" fill="#e6dfd0" style="--dx:93px;--dy:0px;--d:-.4s"/>
+            <rect class="gr" x="84" y="101" width="4" height="4" fill="#b9b0a0" style="--dx:95px;--dy:16px;--d:-.46s"/>
+            <rect class="gr" x="84" y="98" width="3" height="3" fill="#d8d0c0" style="--dx:92px;--dy:-38px;--d:-.52s"/>
+          </g>
+          <g class="sparks">
+            <rect class="sp" x="174" y="96" width="3" height="3" fill="#f3c06b" style="--dx:-26px;--dy:-30px;--d:-.1s"/>
+            <rect class="sp" x="174" y="104" width="3" height="3" fill="#e08a3c" style="--dx:-30px;--dy:22px;--d:-.3s"/>
+            <rect class="sp" x="174" y="100" width="2" height="2" fill="#f3c06b" style="--dx:-38px;--dy:-4px;--d:-.5s"/>
+          </g>
+          <g transform="translate(20 70) rotate(8)">
+            <rect x="0" y="16" width="60" height="22" rx="5" fill="#34424a"/>
+            <path d="M60 18l8 4v10l-8 4z" fill="url(#g-metal)"/>
+            <rect x="14" y="34" width="14" height="30" rx="4" fill="#26323a"/>
+          </g>
+          <g transform="translate(70 170)" class="gauge">
+            <path d="M-40 0a40 40 0 0 1 80 0" fill="none" stroke="#e9e1cf" stroke-width="3"/>
+            <path d="M14 -37a40 40 0 0 1 26 37" fill="none" stroke="#e0703a" stroke-width="6"/>
+            <g class="needle" style="--a:58deg"><path d="M-2 0L0-34 2 0z" fill="#f3ebdc"/></g>
+            <circle r="5" fill="#f3ebdc"/>
+            <text x="-46" y="14" font-size="10" fill="#e9e1cf" font-family="Archivo Narrow, sans-serif">faible</text>
+            <text x="28" y="14" font-size="10" fill="#e9e1cf" font-family="Archivo Narrow, sans-serif">forte</text>
+          </g>
+        </svg>
+      </div>
+      <dl class="vs__list">
+        <div><dt>Projection</dt><dd>Abrasif projeté à forte pression</dd></div>
+        <div><dt>Grain</dt><dd>Plus gros et plus dur (minéral ou métallique)</dd></div>
+        <div><dt>Pour</dt><dd>Le métal, la pierre, les surfaces robustes</dd></div>
+        <div><dt>Effet</dt><dd>Décape en profondeur, peut laisser une surface rugueuse</dd></div>
+      </dl>
+    </article>
+
+    <div class="vs__badge" aria-hidden="true"><span>ou</span></div>
+
+    <article class="vs__half vs__half--aero" data-vs-half="right">
+      <p class="vs__over">Le jet en douceur</p>
+      <h3>Aérogommage</h3>
+      <div class="vs__ill">
+        <svg viewBox="0 0 320 200" aria-hidden="true">
+          <rect x="176" y="20" width="132" height="164" rx="4" fill="url(#p-wood-light-v)"/>
+          <path d="M176 20h48c-4 22 8 34-2 56 10 20-4 40 6 60-8 18 2 30-4 48h-48z" fill="url(#p-paint-white)" opacity=".95"/>
+          <g class="mist"><ellipse cx="160" cy="100" rx="34" ry="26" fill="#fff" opacity=".25"/></g>
+          <g class="grains grains--soft">
+            <circle class="gr" cx="86" cy="98" r="1.6" fill="#fffaf0" style="--dx:88px;--dy:-18px;--d:-.1s"/>
+            <circle class="gr" cx="86" cy="100" r="1.3" fill="#f2ead8" style="--dx:90px;--dy:-4px;--d:-.3s"/>
+            <circle class="gr" cx="86" cy="101" r="1.6" fill="#fffaf0" style="--dx:89px;--dy:10px;--d:-.5s"/>
+            <circle class="gr" cx="86" cy="99" r="1.2" fill="#e6dccb" style="--dx:88px;--dy:-10px;--d:-.7s"/>
+            <circle class="gr" cx="86" cy="100" r="1.5" fill="#fffaf0" style="--dx:90px;--dy:18px;--d:-.9s"/>
+            <circle class="gr" cx="86" cy="100" r="1.2" fill="#f2ead8" style="--dx:89px;--dy:3px;--d:-1.1s"/>
+            <circle class="gr" cx="86" cy="99" r="1.4" fill="#fffaf0" style="--dx:88px;--dy:-24px;--d:-1.25s"/>
+          </g>
+          <g transform="translate(20 70) rotate(8)">
+            <rect x="0" y="16" width="60" height="22" rx="5" fill="#6b4a31"/>
+            <path d="M60 18l8 4v10l-8 4z" fill="url(#g-brass)"/>
+            <rect x="14" y="34" width="14" height="30" rx="4" fill="#4a3324"/>
+          </g>
+          <g transform="translate(70 170)" class="gauge">
+            <path d="M-40 0a40 40 0 0 1 80 0" fill="none" stroke="#6b4a31" stroke-width="3"/>
+            <path d="M-40 0a40 40 0 0 1 14 -30" fill="none" stroke="#5d7d69" stroke-width="6"/>
+            <g class="needle" style="--a:-52deg"><path d="M-2 0L0-34 2 0z" fill="#3d2b1f"/></g>
+            <circle r="5" fill="#3d2b1f"/>
+            <text x="-46" y="14" font-size="10" fill="#3d2b1f" font-family="Archivo Narrow, sans-serif">faible</text>
+            <text x="28" y="14" font-size="10" fill="#3d2b1f" font-family="Archivo Narrow, sans-serif">forte</text>
+          </g>
+        </svg>
+      </div>
+      <dl class="vs__list">
+        <div><dt>Projection</dt><dd>Abrasif fin à basse pression, avec de l'air (et parfois un peu d'eau)</dd></div>
+        <div><dt>Grain</dt><dd>Très fin et plus tendre</dd></div>
+        <div><dt>Pour</dt><dd>Le bois, les moulures, les surfaces délicates</dd></div>
+        <div><dt>Effet</dt><dd>Retire les couches en respectant le veinage</dd></div>
+      </dl>
+    </article>
+  </div>
+
+  <div class="wrap">
+    <p class="vs__note" data-reveal><strong>Bon à savoir&nbsp;:</strong> la technique se choisit au diagnostic, pièce par pièce. Un même meuble peut demander les deux&nbsp;: le bois en douceur, les ferrures plus fermement.</p>
+  </div>
+</section>
+
+<!-- ============ 05 Meubles à vendre ============ -->
+<section class="section vente" id="a-vendre" aria-labelledby="vente-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="label" data-reveal>N°05 — À vendre</p>
+      <h2 id="vente-title" class="h2" data-reveal>Sur la tringle <em>de l'atelier.</em></h2>
+      <p class="lead" data-reveal>Les pièces restaurées seront présentées ici avant de partir. Survolez une étiquette. Les fiches ci-dessous sont des <strong>exemples</strong>&nbsp;: le vrai stock les remplacera.</p>
+    </header>
+
+    <ul class="tags" data-tags>
+      <li class="tag" style="--len:46px;--d:0s">
+        <div class="tag__swing" tabindex="0">
+          <span class="tag__string" aria-hidden="true"></span>
+          <article class="tag__card">
+            <span class="tag__hole" aria-hidden="true"></span>
+            <span class="tag__stamp">[exemple]</span>
+            <svg viewBox="0 0 80 70" aria-hidden="true"><path d="M26 8v52M54 8v52M26 18h28M26 26h28M22 38h36l3 6H19zM20 44h40M24 44v18M56 44v18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Chaise paillée</h3>
+            <p>Bois ciré, assise refaite</p>
+            <span class="tag__ref">Réf. 001</span>
+          </article>
+        </div>
+      </li>
+      <li class="tag" style="--len:78px;--d:-.8s">
+        <div class="tag__swing" tabindex="0">
+          <span class="tag__string" aria-hidden="true"></span>
+          <article class="tag__card">
+            <span class="tag__hole" aria-hidden="true"></span>
+            <span class="tag__stamp">[exemple]</span>
+            <svg viewBox="0 0 80 70" aria-hidden="true"><path d="M10 14h60M14 18h52v38H14zM18 22h44v9H18zM18 35h44v9H18zM18 48h44v6M16 56l-2 8M64 56l2 8M40 26v1M40 39v1" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Commode trois tiroirs</h3>
+            <p>Décapée, cirée</p>
+            <span class="tag__ref">Réf. 002</span>
+          </article>
+        </div>
+      </li>
+      <li class="tag" style="--len:30px;--d:-1.6s">
+        <div class="tag__swing" tabindex="0">
+          <span class="tag__string" aria-hidden="true"></span>
+          <article class="tag__card">
+            <span class="tag__hole" aria-hidden="true"></span>
+            <span class="tag__stamp">[exemple]</span>
+            <svg viewBox="0 0 80 70" aria-hidden="true"><path d="M22 20l18-12 18 12v42H22zM28 24h24v32H28zM34 30l6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Miroir à fronton</h3>
+            <p>Cadre doré, patine conservée</p>
+            <span class="tag__ref">Réf. 003</span>
+          </article>
+        </div>
+      </li>
+      <li class="tag" style="--len:62px;--d:-2.2s">
+        <div class="tag__swing" tabindex="0">
+          <span class="tag__string" aria-hidden="true"></span>
+          <article class="tag__card">
+            <span class="tag__hole" aria-hidden="true"></span>
+            <span class="tag__stamp">[exemple]</span>
+            <svg viewBox="0 0 80 70" aria-hidden="true"><path d="M18 16h44M22 20h36v30H22zM26 26h28v10H26zM40 31v1M24 50l-2 14M56 50l2 14M24 58h32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Table de chevet</h3>
+            <p>Plateau huilé</p>
+            <span class="tag__ref">Réf. 004</span>
+          </article>
+        </div>
+      </li>
+      <li class="tag" style="--len:40px;--d:-3s">
+        <div class="tag__swing" tabindex="0">
+          <span class="tag__string" aria-hidden="true"></span>
+          <article class="tag__card">
+            <span class="tag__hole" aria-hidden="true"></span>
+            <span class="tag__stamp">[exemple]</span>
+            <svg viewBox="0 0 80 70" aria-hidden="true"><path d="M10 28c0-10 6-14 30-14s30 4 30 14v30H10zM10 34h60M24 14v44M56 14v44M36 34v8h8v-8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Malle de voyage</h3>
+            <p>Ferrures décapées</p>
+            <span class="tag__ref">Réf. 005</span>
+          </article>
+        </div>
+      </li>
+    </ul>
+
+    <figure class="photo-ph photo-ph--wide" data-reveal>
+      <div class="photo-ph__inner">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16h8l3-5h10l3 5h8v22H8z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="24" cy="26" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>
+        <span>Photos des arrivages à venir</span>
+        <small>Prix et disponibilités&nbsp;: <span class="ph">[à compléter]</span></small>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 06 Contact ============ -->
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact__grid">
+    <div>
+      <p class="label" data-reveal>N°06 — Contact</p>
+      <h2 id="contact-title" class="h2" data-reveal>Un meuble <em>à sauver&nbsp;?</em></h2>
+      <p class="lead" data-reveal>Décrivez la pièce (et bientôt, joignez une photo)&nbsp;: l'atelier revient vers vous pour un diagnostic et un devis.</p>
+
+      <div class="card-kraft" data-reveal>
+        <p class="card-kraft__title">Fiche atelier</p>
+        <dl class="lines">
+          <div><dt>Adresse</dt><dd>11 Rue Verlaine<br>03700 Bellerive-sur-Allier</dd></div>
+          <div><dt>Téléphone</dt><dd><span class="ph">[à compléter]</span></dd></div>
+          <div><dt>E-mail</dt><dd><span class="ph">[à compléter]</span></dd></div>
+          <div><dt>Horaires</dt><dd><span class="ph">[à compléter]</span></dd></div>
+          <div><dt>Tarifs / devis</dt><dd><span class="ph">[à compléter]</span></dd></div>
+        </dl>
+        <a class="btn btn--small btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=11+Rue+Verlaine+03700+Bellerive-sur-Allier" target="_blank" rel="noopener"><span>Itinéraire</span></a>
+      </div>
+    </div>
+
+    <form class="form" data-form data-reveal novalidate>
+      <p class="form__title">Demande de diagnostic</p>
+      <label>Votre nom<input name="nom" autocomplete="name" required></label>
+      <label>Téléphone ou e-mail<input name="contact" autocomplete="email" required></label>
+      <label>Votre demande
+        <select name="type">
+          <option>Restaurer un meuble</option>
+          <option>Décaper (sablage / aérogommage)</option>
+          <option>Acheter un meuble</option>
+          <option>Autre</option>
+        </select>
+      </label>
+      <label>Le meuble en quelques mots<textarea name="message" rows="4" placeholder="Ex. : commode en bois peinte, un tiroir qui force…"></textarea></label>
+      <button class="btn btn--rust" type="submit"><span>Envoyer la demande</span></button>
+      <p class="form__msg" data-form-msg role="status"></p>
+      <p class="form__note">Formulaire de démonstration&nbsp;: l'envoi sera branché à la mise en ligne. <span class="ph">[à compléter]</span></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__sign">
+      <svg class="footer__stamp" aria-hidden="true"><use href="#s-stamp"/></svg>
+      <p class="footer__name">Corentin Comes<span>Atelier</span></p>
+    </div>
+    <div class="footer__info">
+      <p>Corentin Comes — entreprise individuelle (EI) — SIREN 132 000 001</p>
+      <p>11 Rue Verlaine, 03700 Bellerive-sur-Allier</p>
+      <p class="footer__small">Nom commercial «&nbsp;Corentin Comes, Atelier&nbsp;» <span class="ph">[à confirmer]</span> · Illustrations réalisées pour ce site · Site de démonstration</p>
+      <p><a href="mentions-legales.html">Mentions légales</a> · <a href="#top">Haut de page ↑</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="script.js?v=3" defer></script>
+<div role="note" style="position:fixed;left:10px;bottom:10px;z-index:2147483647;pointer-events:none;font:600 11px/1.3 system-ui,sans-serif;letter-spacing:.02em;color:#fff;background:rgba(17,17,17,.78);padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)">Maquette de démonstration · site non officiel</div>
+</body>
+</html>

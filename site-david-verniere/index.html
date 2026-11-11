@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pizz'O'Matic — Pizzas en distributeur automatique à Vichy | David Verniere</title>
+  <meta name="description" content="Pizzas en distributeur automatique à Vichy (03200). Une pizza chaude, sans attendre : choisissez, payez, récupérez. David Verniere, entreprise individuelle.">
+  <meta name="theme-color" content="#070b24">
+  <!-- canonical et og:image absolus à renseigner une fois le domaine choisi : [à compléter] -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Pizz'O'Matic — une pizza chaude, à toute heure, à Vichy">
+  <meta property="og:description" content="Pizzas en distributeur automatique à Vichy. Je choisis, je paie, je récupère.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=2">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "David Verniere",
+    "description": "Pizzas en distributeurs automatiques à Vichy.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vichy",
+      "postalCode": "03200",
+      "addressCountry": "FR"
+    },
+    "areaServed": "Vichy",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "SIREN",
+      "value": "528259963"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <!-- Décor : ciel étoilé + grille rétro -->
+  <div class="sky" aria-hidden="true"></div>
+  <canvas class="stars" id="stars" aria-hidden="true"></canvas>
+  <div class="retro-grid" aria-hidden="true"><div class="retro-grid__plane"><div class="retro-grid__lines"></div></div></div>
+
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="#accueil" aria-label="Pizz'O'Matic, retour à l'accueil">
+        <span class="brand__icon pixel" data-pixel="slice" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">Pizz'O'Matic</span>
+          <span class="brand__tag ph">[nom commercial à confirmer]</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#machine">La machine</a></li>
+          <li><a href="#comment">Comment ça marche</a></li>
+          <li><a href="#emplacements">Emplacements</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn--small btn--yellow" href="#emplacements">Trouver un distributeur</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="hero__sun" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="kicker hero__kicker"><span class="pixel" data-pixel="pin" aria-hidden="true"></span> Vichy · 03200 · Distributeur automatique</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="sr-only">Une pizza chaude, à toute heure.</span>
+            <span class="neon neon--yellow" data-neon aria-hidden="true">Une pizza chaude,</span>
+            <span class="neon neon--red" data-neon aria-hidden="true">à toute heure.</span>
+          </h1>
+          <p class="hero__lead">Pas de file, pas de réservation, pas d'attente au comptoir&nbsp;: la machine s'occupe de tout. Vous choisissez sur l'écran, vous payez, vous récupérez votre pizza par la trappe. C'est tout.</p>
+          <div class="hero__cta">
+            <a class="btn btn--red" href="#machine"><span class="pixel" data-pixel="bolt" aria-hidden="true"></span> Essayer la machine</a>
+            <a class="btn btn--ghost" href="#emplacements">Voir les emplacements</a>
+          </div>
+          <p class="hero__note">Horaires d'accès&nbsp;: <span class="ph">[à confirmer]</span></p>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__vm-wrap" id="heroVm">
+            <svg class="hero-vm" viewBox="0 0 340 600" role="img" aria-labelledby="vmTitle vmDesc">
+              <title id="vmTitle">Illustration d'un distributeur automatique de pizzas</title>
+              <desc id="vmDesc">Un distributeur rétro rouge tomate, avec une enseigne lumineuse, un écran, un clavier, un four vitré où tourne une pizza et une trappe de retrait.</desc>
+              <defs>
+                <linearGradient id="g-cab" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#ff7a5f"/>
+                  <stop offset=".3" stop-color="#ff4b3e"/>
+                  <stop offset=".78" stop-color="#d9342a"/>
+                  <stop offset="1" stop-color="#9e211b"/>
+                </linearGradient>
+                <linearGradient id="g-face" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#18205a"/>
+                  <stop offset="1" stop-color="#0a0f30"/>
+                </linearGradient>
+                <radialGradient id="g-oven" cx=".5" cy=".62" r=".75">
+                  <stop offset="0" stop-color="#ffe08a"/>
+                  <stop offset=".38" stop-color="#ff9a3d"/>
+                  <stop offset=".75" stop-color="#c8361f"/>
+                  <stop offset="1" stop-color="#3d0c0a"/>
+                </radialGradient>
+                <linearGradient id="g-screen" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#0e2050"/>
+                  <stop offset="1" stop-color="#060e28"/>
+                </linearGradient>
+                <linearGradient id="g-flap" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#2b3680" stop-opacity=".95"/>
+                  <stop offset="1" stop-color="#121a4a" stop-opacity=".95"/>
+                </linearGradient>
+                <linearGradient id="g-chrome" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#9aa3d6"/>
+                  <stop offset=".5" stop-color="#f1f3ff"/>
+                  <stop offset="1" stop-color="#9aa3d6"/>
+                </linearGradient>
+                <linearGradient id="g-strip" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ffd23f"/>
+                  <stop offset=".5" stop-color="#ff9a3d"/>
+                  <stop offset="1" stop-color="#ffd23f"/>
+                </linearGradient>
+                <pattern id="p-scan" width="4" height="4" patternUnits="userSpaceOnUse">
+                  <rect width="4" height="2" fill="rgba(255,255,255,.06)"/>
+                </pattern>
+                <filter id="f-glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="3.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="f-blur" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="9"/>
+                </filter>
+                <filter id="f-steam" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="1.6"/>
+                </filter>
+                <clipPath id="c-hatch"><rect x="66" y="422" width="208" height="88" rx="10"/></clipPath>
+                <clipPath id="c-oven"><rect x="64" y="270" width="144" height="116" rx="8"/></clipPath>
+                <clipPath id="c-screen"><rect x="64" y="142" width="144" height="102" rx="7"/></clipPath>
+              </defs>
+
+              <!-- Lueur au sol -->
+              <ellipse class="vm-floor" cx="170" cy="584" rx="150" ry="14" fill="#ff4b3e" opacity=".45" filter="url(#f-blur)"/>
+              <!-- Halo néon -->
+              <rect class="vm-halo" x="16" y="56" width="308" height="504" rx="31" fill="none" stroke="#ffd23f" stroke-width="3" opacity=".55" filter="url(#f-glow)"/>
+              <!-- Caisson -->
+              <rect x="20" y="60" width="300" height="496" rx="28" fill="url(#g-cab)"/>
+              <rect x="30" y="72" width="7" height="470" rx="3.5" fill="#fff" opacity=".2"/>
+              <!-- Bandes lumineuses latérales -->
+              <rect class="vm-strip" x="306" y="132" width="6" height="392" rx="3" fill="url(#g-strip)" filter="url(#f-glow)"/>
+              <rect class="vm-strip" x="27" y="132" width="6" height="392" rx="3" fill="url(#g-strip)" filter="url(#f-glow)" opacity=".7"/>
+
+              <!-- Enseigne -->
+              <rect x="46" y="14" width="248" height="74" rx="22" fill="#0d1238" stroke="#ffd23f" stroke-width="3"/>
+              <rect x="54" y="22" width="232" height="58" rx="16" fill="none" stroke="#ff4b3e" stroke-width="1.5" opacity=".6"/>
+              <text class="vm-sign" x="170" y="66" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="42" letter-spacing="4" fill="#fff4cf" filter="url(#f-glow)">PIZZA</text>
+              <g class="vm-bulbs">
+                <circle cx="70" cy="104" r="4.5" fill="#ffd23f"/><circle cx="95" cy="104" r="4.5" fill="#ffd23f"/>
+                <circle cx="120" cy="104" r="4.5" fill="#ffd23f"/><circle cx="145" cy="104" r="4.5" fill="#ffd23f"/>
+                <circle cx="170" cy="104" r="4.5" fill="#ffd23f"/><circle cx="195" cy="104" r="4.5" fill="#ffd23f"/>
+                <circle cx="220" cy="104" r="4.5" fill="#ffd23f"/><circle cx="245" cy="104" r="4.5" fill="#ffd23f"/>
+                <circle cx="270" cy="104" r="4.5" fill="#ffd23f"/>
+              </g>
+
+              <!-- Façade -->
+              <rect x="40" y="118" width="260" height="420" rx="18" fill="url(#g-face)" stroke="#05081c" stroke-width="2"/>
+
+              <!-- Écran -->
+              <rect x="56" y="134" width="160" height="118" rx="12" fill="#050a22" stroke="#2a3470" stroke-width="2"/>
+              <rect x="64" y="142" width="144" height="102" rx="7" fill="url(#g-screen)"/>
+              <g clip-path="url(#c-screen)" class="vm-screen">
+                <text x="74" y="162" font-family="VT323, monospace" font-size="15" fill="#ffd23f">CHOISIS TA PIZZA</text>
+                <rect class="vm-cursor" x="182" y="151" width="7" height="12" fill="#ffd23f"/>
+                <line x1="74" y1="170" x2="198" y2="170" stroke="#ffd23f" stroke-opacity=".3" stroke-dasharray="3 3"/>
+                <text x="74" y="194" font-family="VT323, monospace" font-size="13" fill="#8f9bdc">&gt; SÉLECTION</text>
+                <text id="heroScreenName" x="74" y="216" font-family="VT323, monospace" font-size="22" fill="#fff">MARGHERITA</text>
+                <text x="74" y="236" font-family="VT323, monospace" font-size="12" fill="#ff8a7a">PRIX : [À COMPLÉTER]</text>
+                <g class="vm-screen-pizza">
+                  <circle cx="184" cy="200" r="15" fill="#e9a24b"/>
+                  <circle cx="184" cy="200" r="12" fill="#e0412f"/>
+                  <circle cx="180" cy="196" r="3" fill="#fff3d6"/><circle cx="189" cy="198" r="2.6" fill="#fff3d6"/>
+                  <circle cx="183" cy="206" r="2.8" fill="#fff3d6"/><ellipse cx="188" cy="205" rx="2.4" ry="1.3" fill="#3fae4a"/>
+                </g>
+                <rect x="64" y="142" width="144" height="102" fill="url(#p-scan)"/>
+                <path d="M64 142h144v22c-50 8-96 4-144 14z" fill="#fff" opacity=".05"/>
+              </g>
+
+              <!-- Clavier -->
+              <rect x="228" y="134" width="56" height="118" rx="10" fill="#070c28" stroke="#2a3470" stroke-width="2"/>
+              <g class="vm-keys" font-family="VT323, monospace" font-size="11" text-anchor="middle">
+                <g class="vm-key"><rect x="235" y="143" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="235" y="143" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="241.5" y="156" fill="#c3c9ff">1</text></g>
+                <g class="vm-key"><rect x="252" y="143" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="252" y="143" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="258.5" y="156" fill="#c3c9ff">2</text></g>
+                <g class="vm-key"><rect x="269" y="143" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="269" y="143" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="275.5" y="156" fill="#c3c9ff">3</text></g>
+                <g class="vm-key"><rect x="235" y="166" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="235" y="166" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="241.5" y="179" fill="#c3c9ff">4</text></g>
+                <g class="vm-key"><rect x="252" y="166" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="252" y="166" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="258.5" y="179" fill="#c3c9ff">5</text></g>
+                <g class="vm-key"><rect x="269" y="166" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="269" y="166" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="275.5" y="179" fill="#c3c9ff">6</text></g>
+                <g class="vm-key"><rect x="235" y="189" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="235" y="189" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="241.5" y="202" fill="#c3c9ff">7</text></g>
+                <g class="vm-key"><rect x="252" y="189" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="252" y="189" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="258.5" y="202" fill="#c3c9ff">8</text></g>
+                <g class="vm-key"><rect x="269" y="189" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="269" y="189" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="275.5" y="202" fill="#c3c9ff">9</text></g>
+                <g class="vm-key"><rect x="235" y="212" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="235" y="212" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="241.5" y="225" fill="#c3c9ff">A</text></g>
+                <g class="vm-key"><rect x="252" y="212" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="252" y="212" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="258.5" y="225" fill="#c3c9ff">0</text></g>
+                <g class="vm-key"><rect x="269" y="212" width="13" height="18" rx="3" fill="#1d2660" stroke="#3a4590"/><rect class="vm-key__lit" x="269" y="212" width="13" height="18" rx="3" fill="#ffd23f" opacity="0"/><text x="275.5" y="225" fill="#c3c9ff">B</text></g>
+              </g>
+              <circle class="vm-led" cx="256" cy="241" r="3" fill="#3fe08a"/>
+
+              <!-- Fente de paiement (moyen à confirmer) -->
+              <rect x="228" y="262" width="56" height="44" rx="8" fill="#070c28" stroke="#2a3470" stroke-width="2"/>
+              <rect x="238" y="274" width="36" height="6" rx="3" fill="#000" stroke="#ffd23f" stroke-opacity=".6"/>
+              <path d="M252 286l4 5 4-5" fill="none" stroke="#ffd23f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+              <text x="256" y="301" text-anchor="middle" font-family="VT323, monospace" font-size="8" fill="#8f9bdc">PAIEMENT</text>
+
+              <!-- Bouton OK + flèches -->
+              <circle class="vm-ok-glow" cx="256" cy="336" r="24" fill="#ff4b3e" opacity=".35" filter="url(#f-glow)"/>
+              <circle cx="256" cy="336" r="19" fill="#ff4b3e" stroke="#ffd23f" stroke-width="3"/>
+              <text x="256" y="341" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="14" fill="#fff">OK</text>
+              <circle cx="240" cy="377" r="9" fill="#1d2660" stroke="#3a4590"/>
+              <path d="M236 379l4-5 4 5" fill="none" stroke="#c3c9ff" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="272" cy="377" r="9" fill="#1d2660" stroke="#3a4590"/>
+              <path d="M268 375l4 5 4-5" fill="none" stroke="#c3c9ff" stroke-width="1.8" stroke-linecap="round"/>
+
+              <!-- Four vitré -->
+              <rect x="56" y="262" width="160" height="132" rx="12" fill="#050a22" stroke="#2a3470" stroke-width="2"/>
+              <g clip-path="url(#c-oven)">
+                <rect class="vm-oven" x="64" y="270" width="144" height="116" fill="url(#g-oven)"/>
+                <path class="vm-coil" d="M72 282 l8 6 8-6 8 6 8-6 8 6 8-6 8 6 8-6 8 6 8-6 8 6 8-6 8 6 8-6 8 6" fill="none" stroke="#fff1b8" stroke-width="2.4" stroke-linejoin="round" filter="url(#f-glow)"/>
+                <g class="vm-oven-pizza">
+                  <circle cx="136" cy="334" r="34" fill="#e9a24b"/>
+                  <circle cx="136" cy="334" r="28" fill="#e0412f"/>
+                  <circle cx="126" cy="325" r="6" fill="#fff3d6"/><circle cx="147" cy="328" r="5.5" fill="#fff3d6"/>
+                  <circle cx="133" cy="346" r="6" fill="#fff3d6"/><circle cx="150" cy="345" r="4" fill="#fff3d6"/>
+                  <circle cx="122" cy="341" r="3.6" fill="#fff3d6"/>
+                  <ellipse cx="140" cy="320" rx="4.5" ry="2.2" fill="#3fae4a" transform="rotate(-30 140 320)"/>
+                  <ellipse cx="124" cy="334" rx="4.5" ry="2.2" fill="#3fae4a" transform="rotate(40 124 334)"/>
+                  <ellipse cx="144" cy="338" rx="4.5" ry="2.2" fill="#3fae4a" transform="rotate(10 144 338)"/>
+                  <path d="M136 300v68M102 334h68M112 310l48 48M160 310l-48 48" stroke="#7a2a12" stroke-opacity=".25" stroke-width="1"/>
+                </g>
+                <rect x="70" y="372" width="132" height="4" rx="2" fill="#2a0a08" opacity=".6"/>
+                <path d="M64 270h40l-40 60z" fill="#fff" opacity=".1"/>
+                <path d="M120 270h14l-70 104v-20z" fill="#fff" opacity=".06"/>
+              </g>
+
+              <!-- Trappe -->
+              <text x="170" y="414" text-anchor="middle" font-family="VT323, monospace" font-size="14" letter-spacing="2" fill="#ffd23f">▼ RETRAIT ▼</text>
+              <rect x="62" y="418" width="216" height="96" rx="13" fill="#02040f" stroke="#2a3470" stroke-width="3"/>
+              <g clip-path="url(#c-hatch)">
+                <rect x="66" y="422" width="208" height="88" fill="#ff7a3d" opacity=".12"/>
+                <g class="vm-hatch-box">
+                  <path d="M104 478h132l-8 22H112z" fill="#b97a43"/>
+                  <rect x="104" y="466" width="132" height="14" rx="2" fill="#d79a5c"/>
+                  <circle cx="170" cy="473" r="5" fill="#ff4b3e"/>
+                </g>
+                <rect class="vm-flap" x="66" y="422" width="208" height="88" rx="10" fill="url(#g-flap)"/>
+                <rect class="vm-flap-handle" x="138" y="492" width="64" height="7" rx="3.5" fill="url(#g-chrome)"/>
+              </g>
+              <g class="vm-steam" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" filter="url(#f-steam)" opacity="0">
+                <path d="M146 466c-7-10 7-17 0-27s7-17 0-27"/>
+                <path d="M170 462c-7-10 7-17 0-27s7-17 0-27"/>
+                <path d="M194 466c-7-10 7-17 0-27s7-17 0-27"/>
+              </g>
+
+              <!-- Plaque -->
+              <rect x="118" y="524" width="104" height="18" rx="9" fill="url(#g-chrome)"/>
+              <text x="170" y="537" text-anchor="middle" font-family="VT323, monospace" font-size="12" letter-spacing="1" fill="#1a1f4a">VICHY · 03</text>
+
+              <!-- Pieds -->
+              <rect x="46" y="553" width="40" height="18" rx="5" fill="#141938"/>
+              <rect x="254" y="553" width="40" height="18" rx="5" fill="#141938"/>
+            </svg>
+            <span class="hero__tag hero__tag--a" aria-hidden="true">HOT!</span>
+            <span class="hero__tag hero__tag--b" aria-hidden="true"><span class="pixel" data-pixel="star"></span></span>
+          </div>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#machine" aria-label="Descendre vers la machine"><span></span></a>
+    </section>
+
+    <!-- ============ TICKER ============ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Pizza chaude</span><i class="pixel" data-pixel="star"></i><span>Sans attendre</span><i class="pixel" data-pixel="slice"></i><span>Vichy 03200</span><i class="pixel" data-pixel="star"></i><span>Je choisis · je paie · je récupère</span><i class="pixel" data-pixel="slice"></i>
+        <span>Pizza chaude</span><i class="pixel" data-pixel="star"></i><span>Sans attendre</span><i class="pixel" data-pixel="slice"></i><span>Vichy 03200</span><i class="pixel" data-pixel="star"></i><span>Je choisis · je paie · je récupère</span><i class="pixel" data-pixel="slice"></i>
+      </div>
+    </div>
+
+    <!-- ============ MACHINE INTERACTIVE ============ -->
+    <section class="section machine" id="machine" aria-labelledby="machine-title">
+      <div class="container machine__grid">
+        <div class="machine__intro">
+          <p class="kicker" data-reveal><span class="pixel" data-pixel="slice" aria-hidden="true"></span> 01 — Essayez la machine</p>
+          <h2 class="h2" id="machine-title" data-reveal>Appuyez sur OK.<br><span class="accent-yellow">On s'occupe du reste.</span></h2>
+          <p class="lead" data-reveal>Choisissez une pizza sur l'écran, lancez la cuisson et regardez la boîte sortir de la trappe. C'est une démo&nbsp;: la vraie, elle, se mange.</p>
+          <ul class="keys-help" data-reveal aria-label="Raccourcis clavier">
+            <li><kbd>↑</kbd><kbd>↓</kbd> choisir</li>
+            <li><kbd>Entrée</kbd> lancer</li>
+          </ul>
+
+          <article class="pizza-card" data-reveal aria-live="polite">
+            <div class="pizza-card__thumb" id="pizzaThumb" aria-hidden="true"></div>
+            <div class="pizza-card__body">
+              <p class="pizza-card__code" id="pizzaCode">A1</p>
+              <h3 class="pizza-card__name" id="pizzaName">Margherita</h3>
+              <p class="pizza-card__desc" id="pizzaDesc">La classique&nbsp;: tomate, mozzarella, basilic.</p>
+              <p class="pizza-card__meta">Prix&nbsp;: <span class="ph">[à compléter]</span> · <span class="ph">[carte à compléter]</span></p>
+            </div>
+          </article>
+          <button class="btn btn--red machine__go" type="button" data-act="go"><span class="pixel" data-pixel="bolt" aria-hidden="true"></span> Lancer la cuisson</button>
+        </div>
+
+        <div class="vm" id="vm" data-state="idle">
+          <div class="vm__marquee" aria-hidden="true">
+            <span class="vm__marquee-text">PIZZ'O'MATIC</span>
+            <span class="vm__bulbs"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          </div>
+          <div class="vm__cabinet">
+            <div class="vm__top">
+              <div class="vm__screen">
+                <div class="screen__head" aria-hidden="true"><span>CHOISIS TA PIZZA</span><span class="screen__cursor"></span></div>
+                <div class="screen__list" role="radiogroup" aria-label="Choix de la pizza (carte à compléter)" id="pizzaList">
+                  <button type="button" role="radio" class="screen__opt" aria-checked="true" tabindex="0" data-i="0"><span class="screen__code">A1</span><span class="screen__name">MARGHERITA</span></button>
+                  <button type="button" role="radio" class="screen__opt" aria-checked="false" tabindex="-1" data-i="1"><span class="screen__code">A2</span><span class="screen__name">REINE</span></button>
+                  <button type="button" role="radio" class="screen__opt" aria-checked="false" tabindex="-1" data-i="2"><span class="screen__code">A3</span><span class="screen__name">4 FROMAGES</span></button>
+                </div>
+                <div class="screen__cook" aria-hidden="true">
+                  <div class="screen__cook-row"><span>CUISSON</span><span id="cookPct">0%</span></div>
+                  <div class="gauge"><div class="gauge__fill"></div><div class="gauge__ticks"></div></div>
+                </div>
+                <p class="screen__status" id="vmStatus" role="status">PRÊTE À COMMANDER</p>
+                <span class="screen__scan" aria-hidden="true"></span>
+              </div>
+              <div class="vm__pad">
+                <button type="button" class="pad-btn" data-act="prev" aria-label="Pizza précédente"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 13l5-6 5 6" /></svg></button>
+                <button type="button" class="pad-btn" data-act="next" aria-label="Pizza suivante"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6" /></svg></button>
+                <button type="button" class="pad-ok" data-act="go" aria-label="OK : lancer la cuisson">OK</button>
+                <div class="vm__slot" aria-hidden="true"><span class="vm__slit"></span><span class="vm__slot-label">PAIEMENT<br>[À CONFIRMER]</span></div>
+              </div>
+            </div>
+            <div class="vm__oven" aria-hidden="true">
+              <span class="oven__glow"></span>
+              <span class="oven__coil"></span>
+              <span class="oven__pizza" id="ovenPizza"></span>
+              <span class="oven__glass"></span>
+            </div>
+            <div class="vm__hatch" aria-hidden="true">
+              <span class="hatch__label">▼ RETRAIT ▼</span>
+              <span class="hatch__mouth"><span class="hatch__inner"></span><span class="hatch__flap"><span></span></span></span>
+            </div>
+          </div>
+          <div class="vm__tray">
+            <div class="steam" aria-hidden="true">
+              <svg viewBox="0 0 160 120"><path d="M40 110c-12-16 12-26 0-42s12-26 0-42"/><path d="M80 112c-12-16 12-26 0-42s12-26 0-42"/><path d="M120 110c-12-16 12-26 0-42s12-26 0-42"/></svg>
+            </div>
+            <div class="box-mover" aria-hidden="true">
+              <div class="box">
+                <div class="box__base"><span class="box__pizza" id="boxPizza"></span></div>
+                <span class="box__wall box__wall--front"></span>
+                <span class="box__wall box__wall--back"></span>
+                <span class="box__wall box__wall--left"></span>
+                <span class="box__wall box__wall--right"></span>
+                <div class="box__hinge">
+                  <div class="box__lid">
+                    <span class="box__lid-out"><span class="box__logo">PIZZ'O'MATIC</span></span>
+                    <span class="box__lid-in"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn--yellow btn--small vm__again" id="vmAgain" hidden>Une autre&nbsp;?</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMMENT ÇA MARCHE ============ -->
+    <section class="section steps" id="comment" aria-labelledby="steps-title">
+      <div class="container">
+        <p class="kicker" data-reveal><span class="pixel" data-pixel="bolt" aria-hidden="true"></span> 02 — Comment ça marche</p>
+        <h2 class="h2" id="steps-title" data-reveal>Trois gestes.<br><span class="accent-red">Zéro attente au comptoir.</span></h2>
+
+        <ol class="steps__list">
+          <li class="step" data-step="1">
+            <div class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <rect x="22" y="16" width="76" height="62" rx="10" fill="#0b1440" stroke="#ffd23f" stroke-width="3"/>
+                <rect x="32" y="28" width="56" height="9" rx="3" fill="#2a3576"/>
+                <rect class="s1-hl" x="32" y="42" width="56" height="9" rx="3" fill="#ffd23f"/>
+                <rect x="32" y="56" width="56" height="9" rx="3" fill="#2a3576"/>
+                <g class="s1-finger">
+                  <path d="M70 66c0-5 7-5 7 0v14c1-4 7-4 7 0v3c1-4 7-4 7 1v3c1-3 6-3 6 1v14c0 10-8 16-18 16s-15-4-19-11l-8-12c-3-4 2-8 6-5l5 5V66z" fill="#ff4b3e" stroke="#fff3d6" stroke-width="2.5" stroke-linejoin="round"/>
+                </g>
+              </svg>
+            </div>
+            <span class="step__num">01</span>
+            <h3 class="step__title">Je choisis</h3>
+            <p class="step__text">Je fais défiler la carte sur l'écran et je sélectionne ma pizza.</p>
+          </li>
+          <li class="step__link" aria-hidden="true"><span></span></li>
+          <li class="step" data-step="2">
+            <div class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <rect x="28" y="18" width="64" height="84" rx="12" fill="#0b1440" stroke="#ffd23f" stroke-width="3"/>
+                <rect x="40" y="34" width="40" height="7" rx="3.5" fill="#000" stroke="#ffd23f" stroke-opacity=".7"/>
+                <g class="s2-token">
+                  <circle cx="60" cy="14" r="13" fill="#ffd23f" stroke="#fff3d6" stroke-width="2"/>
+                  <text x="60" y="20" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="16" fill="#0b1440">€</text>
+                </g>
+                <circle cx="60" cy="72" r="10" fill="#1d2660" stroke="#3a4590" stroke-width="2"/><circle class="s2-led" cx="60" cy="72" r="8" fill="#ffd23f"/>
+                <path class="s2-check" d="M54 72l4 4 8-8" fill="none" stroke="#0b1440" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="step__num">02</span>
+            <h3 class="step__title">Je paie</h3>
+            <p class="step__text">Directement sur la machine. Moyens de paiement acceptés&nbsp;: <span class="ph">[à confirmer]</span>.</p>
+          </li>
+          <li class="step__link" aria-hidden="true"><span></span></li>
+          <li class="step" data-step="3">
+            <div class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <rect x="16" y="30" width="88" height="48" rx="10" fill="#02040f" stroke="#ffd23f" stroke-width="3"/>
+                <g class="s3-box">
+                  <path d="M30 86h60l-6 18H36z" fill="#b97a43"/>
+                  <rect x="30" y="76" width="60" height="12" rx="2" fill="#d79a5c"/>
+                  <circle cx="60" cy="82" r="3.5" fill="#ff4b3e"/>
+                </g>
+                <g class="s3-steam" fill="none" stroke="#fff3d6" stroke-width="3" stroke-linecap="round">
+                  <path d="M48 66c-5-6 5-10 0-16"/><path d="M60 64c-5-6 5-10 0-16"/><path d="M72 66c-5-6 5-10 0-16"/>
+                </g>
+              </svg>
+            </div>
+            <span class="step__num">03</span>
+            <h3 class="step__title">Je récupère</h3>
+            <p class="step__text">La trappe s'ouvre, ma pizza est là, chaude. Je n'ai plus qu'à rentrer.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ HORLOGE ============ -->
+    <section class="clock-band" aria-labelledby="clock-title">
+      <div class="container clock-band__inner" data-reveal>
+        <p class="clock-band__kicker" id="clock-title">À Vichy, il est</p>
+        <p class="clock" aria-live="off"><span id="clockH">--</span><span class="clock__colon">:</span><span id="clockM">--</span></p>
+        <p class="clock-band__line">…et c'est une très bonne heure pour une pizza.</p>
+        <p class="clock-band__note">Horaires d'accès aux distributeurs&nbsp;: <span class="ph">[à confirmer]</span></p>
+      </div>
+    </section>
+
+    <!-- ============ EMPLACEMENTS ============ -->
+    <section class="section places" id="emplacements" aria-labelledby="places-title">
+      <div class="container">
+        <p class="kicker" data-reveal><span class="pixel" data-pixel="pin" aria-hidden="true"></span> 03 — Emplacements</p>
+        <h2 class="h2" id="places-title" data-reveal>Vos distributeurs<br><span class="accent-yellow">dans Vichy.</span></h2>
+        <div class="places__grid">
+          <div class="map" data-reveal>
+            <svg class="map__svg" viewBox="0 0 800 560" role="img" aria-label="Plan schématique de Vichy, non à l'échelle, avec trois emplacements de distributeurs à compléter">
+              <defs>
+                <pattern id="p-dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#2a3576"/></pattern>
+                <linearGradient id="g-river" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#1a3aa8"/><stop offset="1" stop-color="#0f2370"/>
+                </linearGradient>
+                <filter id="f-mglow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <rect width="800" height="560" rx="28" fill="#0a1035"/>
+              <rect width="800" height="560" rx="28" fill="url(#p-dots)"/>
+              <!-- Rivière -->
+              <path d="M300 -20 C 250 90, 170 150, 200 260 S 260 400, 170 580" fill="none" stroke="url(#g-river)" stroke-width="92" stroke-linecap="round"/>
+              <path d="M300 -20 C 250 90, 170 150, 200 260 S 260 400, 170 580" fill="none" stroke="#4aa3ff" stroke-width="2" stroke-dasharray="2 14" stroke-linecap="round" opacity=".7"/>
+              <text font-family="VT323, monospace" font-size="22" letter-spacing="6" fill="#7fb6ff" opacity=".85"><textPath href="#riverLabel" startOffset="58%">L'ALLIER</textPath></text>
+              <path id="riverLabel" d="M170 580 C 260 400, 230 370, 200 260 C 170 150, 250 90, 300 -20" fill="none"/>
+              <!-- Ponts -->
+              <path d="M150 190 L 290 210" stroke="#8f9bdc" stroke-width="6" stroke-linecap="round"/>
+              <path d="M150 410 L 290 395" stroke="#8f9bdc" stroke-width="6" stroke-linecap="round"/>
+              <!-- Rues schématiques -->
+              <g fill="none" stroke="#2f3c8a" stroke-width="5" stroke-linecap="round">
+                <path d="M290 210 C 400 220, 520 200, 760 160"/>
+                <path d="M290 395 C 420 380, 560 410, 770 430"/>
+                <path d="M330 60 C 360 200, 380 360, 360 540"/>
+                <path d="M470 40 C 480 200, 500 380, 520 540"/>
+                <path d="M620 50 C 610 200, 640 380, 660 530"/>
+                <path d="M300 300 C 450 300, 600 290, 780 300"/>
+              </g>
+              <g fill="none" stroke="#222c6e" stroke-width="2.5" stroke-linecap="round">
+                <path d="M300 120 C 450 130, 600 110, 780 90"/>
+                <path d="M290 480 C 450 470, 620 490, 780 500"/>
+                <path d="M400 40 L 420 540"/><path d="M560 40 L 575 540"/><path d="M700 40 L 720 540"/>
+              </g>
+              <!-- Centre -->
+              <ellipse cx="470" cy="300" rx="120" ry="78" fill="none" stroke="#ff4b3e" stroke-width="2" stroke-dasharray="6 8" opacity=".55"/>
+              <text x="470" y="262" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="44" letter-spacing="10" fill="none" stroke="#ffd23f" stroke-width="1.6" filter="url(#f-mglow)">VICHY</text>
+              <!-- Boussole -->
+              <g transform="translate(728 78)">
+                <circle r="28" fill="#0b1440" stroke="#ffd23f" stroke-width="2"/>
+                <path d="M0 -20 L7 4 L0 0 L-7 4z" fill="#ff4b3e"/>
+                <text y="22" text-anchor="middle" font-family="VT323, monospace" font-size="16" fill="#ffd23f">N</text>
+              </g>
+              <text x="770" y="540" text-anchor="end" font-family="VT323, monospace" font-size="16" fill="#8f9bdc">PLAN SCHÉMATIQUE · NON À L'ÉCHELLE</text>
+            </svg>
+            <button type="button" class="pin" style="--x:56%;--y:44%" data-pin="1" aria-label="Emplacement 1 : adresse à compléter"><span class="pin__ring"></span><span class="pin__head">1</span><span class="pin__tip">Emplacement 1<br><em>[à compléter]</em></span></button>
+            <button type="button" class="pin" style="--x:74%;--y:66%" data-pin="2" aria-label="Emplacement 2 : adresse à compléter"><span class="pin__ring"></span><span class="pin__head">2</span><span class="pin__tip">Emplacement 2<br><em>[à compléter]</em></span></button>
+            <button type="button" class="pin" style="--x:46%;--y:78%" data-pin="3" aria-label="Emplacement 3 : adresse à compléter"><span class="pin__ring"></span><span class="pin__head">3</span><span class="pin__tip">Emplacement 3<br><em>[à compléter]</em></span></button>
+          </div>
+
+          <ol class="places__list">
+            <li class="place" data-pin="1" data-reveal tabindex="0">
+              <span class="place__num">1</span>
+              <div><h3 class="place__name">Emplacement n°1</h3><p class="place__addr"><span class="ph">[adresse à compléter]</span> — Vichy</p><p class="place__hours">Accès&nbsp;: <span class="ph">[horaires à confirmer]</span></p></div>
+            </li>
+            <li class="place" data-pin="2" data-reveal tabindex="0">
+              <span class="place__num">2</span>
+              <div><h3 class="place__name">Emplacement n°2</h3><p class="place__addr"><span class="ph">[adresse à compléter]</span> — Vichy</p><p class="place__hours">Accès&nbsp;: <span class="ph">[horaires à confirmer]</span></p></div>
+            </li>
+            <li class="place" data-pin="3" data-reveal tabindex="0">
+              <span class="place__num">3</span>
+              <div><h3 class="place__name">Emplacement n°3</h3><p class="place__addr"><span class="ph">[adresse à compléter]</span> — Vichy</p><p class="place__hours">Accès&nbsp;: <span class="ph">[horaires à confirmer]</span></p></div>
+            </li>
+            <li class="places__note" data-reveal>Nombre et adresses des distributeurs&nbsp;: <span class="ph">[à compléter]</span>. Le plan est une illustration, pas une carte.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PHOTOS À VENIR ============ -->
+    <section class="section gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <p class="kicker" data-reveal><span class="pixel" data-pixel="camera" aria-hidden="true"></span> 04 — En vrai</p>
+        <h2 class="h2" id="gallery-title" data-reveal>La machine, <span class="accent-red">en chair et en métal.</span></h2>
+        <div class="gallery__grid">
+          <figure class="photo-slot photo-slot--tall" data-reveal>
+            <div class="photo-slot__frame"><span class="pixel" data-pixel="camera" aria-hidden="true"></span><span class="photo-slot__label">photo à venir</span></div>
+            <figcaption>Le distributeur</figcaption>
+          </figure>
+          <figure class="photo-slot" data-reveal>
+            <div class="photo-slot__frame"><span class="pixel" data-pixel="camera" aria-hidden="true"></span><span class="photo-slot__label">photo à venir</span></div>
+            <figcaption>Une pizza à la sortie de la trappe</figcaption>
+          </figure>
+          <figure class="photo-slot" data-reveal>
+            <div class="photo-slot__frame"><span class="pixel" data-pixel="camera" aria-hidden="true"></span><span class="photo-slot__label">photo à venir</span></div>
+            <figcaption>Un emplacement, de nuit</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__panel" data-reveal>
+          <p class="kicker"><span class="pixel" data-pixel="heart" aria-hidden="true"></span> 05 — Contact</p>
+          <h2 class="h2" id="contact-title">Une question&nbsp;? <span class="accent-yellow">Une idée d'emplacement&nbsp;?</span></h2>
+          <p class="lead">David Verniere vous répond. Une machine en panne, une suggestion de pizza, un lieu où vous aimeriez voir un distributeur&nbsp;: dites-le.</p>
+          <ul class="contact__cards">
+            <li class="contact__card">
+              <span class="pixel" data-pixel="phone" aria-hidden="true"></span>
+              <span class="contact__label">Téléphone</span>
+              <span class="contact__value ph">[à compléter]</span>
+            </li>
+            <li class="contact__card">
+              <span class="pixel" data-pixel="mail" aria-hidden="true"></span>
+              <span class="contact__label">E-mail</span>
+              <span class="contact__value ph">[à compléter]</span>
+            </li>
+            <li class="contact__card">
+              <span class="pixel" data-pixel="pin" aria-hidden="true"></span>
+              <span class="contact__label">Ville</span>
+              <span class="contact__value">Vichy (03200)</span>
+            </li>
+          </ul>
+          <p class="contact__extra">Retrouvez aussi David Verniere sur AlloVoisins&nbsp;: <span class="ph">[lien à compléter]</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="pixel" data-pixel="slice" aria-hidden="true"></span>
+        <p><strong>Pizz'O'Matic</strong> <span class="ph">[nom commercial à confirmer]</span><br>David Verniere — Entreprise individuelle (EI)<br>SIREN 528 259 963 · Vichy (03200)</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Liens de pied de page">
+        <a href="#machine">La machine</a>
+        <a href="#comment">Comment ça marche</a>
+        <a href="#emplacements">Emplacements</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+      </nav>
+      <p class="site-footer__small">© <span id="year">2026</span> David Verniere · Maquette de démonstration · Illustrations réalisées pour ce site</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js?v=2" defer></script>
+<div role="note" style="position:fixed;left:10px;bottom:10px;z-index:2147483647;pointer-events:none;font:600 11px/1.3 system-ui,sans-serif;letter-spacing:.02em;color:#fff;background:rgba(17,17,17,.78);padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)">Maquette de démonstration · site non officiel</div>
+</body>
+</html>

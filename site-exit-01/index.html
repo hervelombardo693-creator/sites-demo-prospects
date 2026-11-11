@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>EXIT 0.1 — Spectacles vivants, tournées &amp; événements · Moulins (Allier)</title>
+  <meta name="description" content="EXIT 0.1 organise des spectacles vivants, des tournées et des événements depuis Moulins, dans l'Allier. Une nouvelle maison pour faire se lever le rideau.">
+  <!-- Maquette de démonstration : retirer cette ligne au moment de la mise en ligne -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b0a0a">
+
+  <!-- Open Graph (remplacer les URL relatives par l'URL absolue du site à la mise en ligne) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="EXIT 0.1">
+  <meta property="og:title" content="EXIT 0.1 — Spectacles vivants, tournées & événements">
+  <meta property="og:description" content="Organisation de spectacles vivants, de tournées et d'événements, depuis Moulins (Allier).">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Panneau lumineux vert « EXIT 0.1 » sur fond de rideau de scène rouge">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    // Prépare l'intro (rideau) avant le premier rendu, sauf si l'utilisateur réduit les animations.
+    (function () {
+      var d = document.documentElement;
+      d.classList.remove('no-js'); d.classList.add('js');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduce) {
+        d.classList.add('intro');
+        // Filet de sécurité : si les scripts ne démarrent pas, on ouvre la salle quand même.
+        setTimeout(function () { if (!d.classList.contains('intro-running')) d.classList.remove('intro'); }, 4500);
+      }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "name": "EXIT 0.1",
+    "legalName": "EXIT 0.1",
+    "description": "Organisation de spectacles vivants, de tournées et d'événements.",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "SIREN",
+      "value": "132216748"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "46 Boulevard de Courtais",
+      "postalCode": "03000",
+      "addressLocality": "Moulins",
+      "addressRegion": "Allier",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ============ INTRO : les trois coups, puis le rideau ============ -->
+  <div class="curtain" aria-hidden="true">
+    <div class="curtain__panel curtain__panel--left"><span class="curtain__shade"></span></div>
+    <div class="curtain__panel curtain__panel--right"><span class="curtain__shade"></span></div>
+    <svg class="curtain__valance" viewBox="0 0 1200 120" preserveAspectRatio="none" focusable="false">
+      <defs>
+        <linearGradient id="valFold" x1="0" x2="1">
+          <stop offset="0" stop-color="#5a0912"/><stop offset=".5" stop-color="#b31326"/><stop offset="1" stop-color="#5a0912"/>
+        </linearGradient>
+        <pattern id="valPat" width="120" height="120" patternUnits="userSpaceOnUse">
+          <rect width="120" height="120" fill="url(#valFold)"/>
+        </pattern>
+      </defs>
+      <path fill="url(#valPat)" d="M0 0H1200V70 Q1140 118 1080 70 Q1020 118 960 70 Q900 118 840 70 Q780 118 720 70 Q660 118 600 70 Q540 118 480 70 Q420 118 360 70 Q300 118 240 70 Q180 118 120 70 Q60 118 0 70Z"/>
+      <path fill="none" stroke="#d9a441" stroke-width="3" stroke-dasharray="2 6" d="M0 62 Q60 110 120 62 Q180 110 240 62 Q300 110 360 62 Q420 110 480 62 Q540 110 600 62 Q660 110 720 62 Q780 110 840 62 Q900 110 960 62 Q1020 110 1080 62 Q1140 110 1200 62"/>
+    </svg>
+    <div class="curtain__knocks">
+      <span class="knock"></span><span class="knock"></span><span class="knock"></span>
+      <p class="curtain__hint">Les trois coups</p>
+    </div>
+  </div>
+  <button class="intro-skip" type="button">Passer l'intro</button>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============ EN-TÊTE ============ -->
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="EXIT 0.1, retour en haut de page">
+      <span class="brand__sign">
+        <svg class="runner" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle cx="25" cy="7" r="4"/>
+          <path d="M22 13 L17.5 24 M21.5 14.5 L27.5 18 L32 16 M21.5 14.5 L15.5 17 L12 21.5 M17.5 24 L24 28 L24.5 35 M17.5 24 L13.5 30 L7 31"/>
+        </svg>
+        <span class="brand__word">EXIT</span><span class="brand__ver">0.1</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav__toggle-label">Menu</span><span class="nav__burger" aria-hidden="true"><i></i><i></i></span>
+      </button>
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#manifeste"><span class="nav__num">I</span>Le noir</a></li>
+        <li><a href="#poles"><span class="nav__num">II</span>Pôles</a></li>
+        <li><a href="#tournee"><span class="nav__num">III</span>La route</a></li>
+        <li><a href="#agenda"><span class="nav__num">IV</span>L'affiche</a></li>
+        <li><a href="#contact"><span class="nav__num">V</span>Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <p class="hero__meta mono" data-hero="meta"><span class="dot-live" aria-hidden="true"></span>Acte 0 · Lever de rideau</p>
+      <p class="hero__place mono" data-hero="meta">Moulins — Allier (03)</p>
+
+      <div class="neon" data-hero="neon" role="img" aria-label="EXIT 0.1">
+        <div class="neon__glow" aria-hidden="true"></div>
+        <div class="neon__box" aria-hidden="true">
+          <svg class="runner neon__runner" viewBox="0 0 40 40" focusable="false">
+            <circle cx="25" cy="7" r="4"/>
+            <path d="M22 13 L17.5 24 M21.5 14.5 L27.5 18 L32 16 M21.5 14.5 L15.5 17 L12 21.5 M17.5 24 L24 28 L24.5 35 M17.5 24 L13.5 30 L7 31"/>
+          </svg>
+          <span class="neon__word">EXIT</span>
+          <span class="neon__ver">0.1</span>
+          <svg class="neon__arrow" viewBox="0 0 40 24" focusable="false"><path d="M2 12 H34 M24 3 L35 12 L24 21"/></svg>
+        </div>
+      </div>
+
+      <h1 class="hero__title" id="hero-title">
+        <span class="line"><span class="line__in">Tout commence</span></span>
+        <span class="line line--indent"><span class="line__in"><em>quand</em> la salle</span></span>
+        <span class="line"><span class="line__in">s'éteint.</span></span>
+      </h1>
+
+      <div class="hero__aside">
+        <p class="hero__lede" data-hero="lede">
+          <strong>EXIT 0.1</strong> organise des <em>spectacles vivants</em>, des <em>tournées</em> et des <em>événements</em>.
+          Une maison toute neuve, installée à Moulins, pour que le rideau se lève — ici et ailleurs.
+        </p>
+        <div class="hero__actions" data-hero="lede">
+          <a class="btn btn--exit magnetic" href="#agenda"><span>Voir l'affiche</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost magnetic" href="#contact"><span>Monter un projet</span></a>
+        </div>
+      </div>
+
+      <figure class="photo-slot hero__photo" data-hero="photo">
+        <svg viewBox="0 0 300 380" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="heroCone" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f2e9d8" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#f2e9d8" stop-opacity="0"/>
+            </linearGradient>
+            <radialGradient id="heroPool" cx=".5" cy=".5" r=".5">
+              <stop offset="0" stop-color="#f2e9d8" stop-opacity=".5"/>
+              <stop offset="1" stop-color="#f2e9d8" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="300" height="380" fill="#120f0f"/>
+          <path d="M0 0 H60 Q48 190 70 380 H0Z" fill="#6e0b17"/>
+          <path d="M300 0 H240 Q252 190 230 380 H300Z" fill="#6e0b17"/>
+          <path d="M18 0 Q10 190 26 380 M40 0 Q30 190 50 380 M282 0 Q290 190 274 380 M260 0 Q270 190 250 380" stroke="#3d050c" stroke-width="5" fill="none"/>
+          <polygon points="138,0 162,0 225,300 75,300" fill="url(#heroCone)"/>
+          <ellipse cx="150" cy="302" rx="88" ry="20" fill="url(#heroPool)"/>
+          <g fill="#0b0a0a" stroke="#0b0a0a" stroke-width="4" stroke-linecap="round">
+            <rect x="132" y="232" width="36" height="8" rx="2"/>
+            <path d="M136 240 V298 M164 240 V298 M136 232 V188 M164 232 V188" fill="none"/>
+            <rect x="133" y="186" width="34" height="18" rx="3"/>
+          </g>
+          <rect x="0" y="330" width="300" height="50" fill="#0b0a0a"/>
+        </svg>
+        <figcaption class="photo-slot__label"><span class="photo-slot__icon" aria-hidden="true"></span>photo à venir — la scène</figcaption>
+      </figure>
+
+      <p class="hero__vertical mono" aria-hidden="true">Spectacles vivants · Tournées · Événements</p>
+
+      <a class="scroll-cue" href="#manifeste">
+        <span class="scroll-cue__line" aria-hidden="true"></span>
+        <span class="mono">Suivez le panneau vert</span>
+      </a>
+    </section>
+
+    <!-- ============ BANDEAU ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Spectacles vivants</span><i>✦</i><span>Tournées</span><i>✦</i><span>Événements</span><i>✦</i><span class="outline">Moulins — Allier</span><i>✦</i>
+        <span>Spectacles vivants</span><i>✦</i><span>Tournées</span><i>✦</i><span>Événements</span><i>✦</i><span class="outline">Moulins — Allier</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ ACTE I : LE NOIR (projecteur) ============ -->
+    <section class="spot" id="manifeste" aria-labelledby="spot-title">
+      <svg class="spot__fixture" viewBox="0 0 120 80" aria-hidden="true" focusable="false">
+        <rect x="56" y="0" width="8" height="18" fill="#2b2626"/>
+        <path d="M30 18 H90 L80 58 H40Z" fill="#1d1919" stroke="#3a3333" stroke-width="2"/>
+        <ellipse cx="60" cy="60" rx="22" ry="7" fill="#f2e9d8" opacity=".9"/>
+      </svg>
+      <div class="spot__beam" aria-hidden="true"></div>
+
+      <div class="spot__content">
+        <p class="act-label mono">Acte I — Le noir</p>
+        <h2 class="spot__title" id="spot-title">Dans le noir,<br><em>tout</em> devient possible.</h2>
+        <div class="spot__cols">
+          <p class="spot__text">
+            D'abord, on entend la salle respirer. Puis une lumière, un geste, une voix.
+            Notre métier, c'est de faire arriver ce moment : au bon endroit, à la bonne heure,
+            devant le bon public.
+          </p>
+          <p class="spot__text">
+            De la première idée au dernier rappel, EXIT 0.1 organise ce qui se passe avant,
+            pendant et après le lever de rideau — pour les artistes, pour les lieux, pour les spectateurs.
+          </p>
+        </div>
+        <ul class="spot__verbs" aria-label="Ce que nous faisons">
+          <li>Imaginer</li><li>Organiser</li><li>Accueillir</li><li>Faire tourner</li>
+        </ul>
+        <span class="spot__ghost spot__ghost--1" aria-hidden="true">trac</span>
+        <span class="spot__ghost spot__ghost--2" aria-hidden="true">silence</span>
+        <span class="spot__ghost spot__ghost--3" aria-hidden="true">rappel</span>
+      </div>
+
+      <div class="spot__dark" aria-hidden="true"></div>
+      <div class="spot__warm" aria-hidden="true"></div>
+
+      <button class="spot__toggle mono" type="button" aria-pressed="false">
+        <span class="spot__toggle-dot" aria-hidden="true"></span><span class="spot__toggle-text">Rallumer la salle</span>
+      </button>
+    </section>
+
+    <!-- ============ ACTE II : LES TROIS PÔLES (épinglé) ============ -->
+    <section class="poles" id="poles" aria-label="Acte II — Les trois pôles">
+      <div class="poles__stage">
+
+        <article class="pole pole--live" aria-labelledby="pole1-title">
+          <span class="pole__ghost" aria-hidden="true">en scène · en scène ·</span>
+          <div class="pole__inner">
+            <p class="pole__num" aria-hidden="true">01<small>/03</small></p>
+            <p class="act-label mono">Acte II · Premier pôle</p>
+            <h2 class="pole__title kinetic" id="pole1-title">Spectacles<br>vivants</h2>
+            <p class="pole__text">
+              Théâtre, musique, danse, cirque, humour : tout ce qui se joue une seule fois,
+              ici et maintenant. Nous organisons la rencontre entre une œuvre, une salle et son public.
+            </p>
+            <svg class="pole__art" viewBox="0 0 400 300" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="cone1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe8b0" stop-opacity=".7"/><stop offset="1" stop-color="#ffe8b0" stop-opacity="0"/></linearGradient>
+              </defs>
+              <polygon class="art-cone" points="110,0 130,0 230,250 120,250" fill="url(#cone1)"/>
+              <polygon class="art-cone art-cone--b" points="290,0 270,0 170,250 280,250" fill="url(#cone1)"/>
+              <ellipse cx="200" cy="252" rx="150" ry="22" fill="#2a0408"/>
+              <ellipse cx="200" cy="250" rx="70" ry="10" fill="#ffe8b0" opacity=".35"/>
+              <g stroke="#0b0a0a" stroke-width="6" stroke-linecap="round" fill="none">
+                <path d="M200 250 V170"/><path d="M180 250 H220"/><path d="M200 172 L214 150"/>
+              </g>
+              <rect x="206" y="128" width="18" height="30" rx="9" transform="rotate(32 215 143)" fill="#0b0a0a"/>
+              <path d="M0 0 H70 Q55 150 80 300 H0Z" fill="#4a0710"/>
+              <path d="M400 0 H330 Q345 150 320 300 H400Z" fill="#4a0710"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="pole pole--road" aria-labelledby="pole2-title">
+          <span class="pole__ghost" aria-hidden="true">en route · en route ·</span>
+          <div class="pole__inner">
+            <p class="pole__num" aria-hidden="true">02<small>/03</small></p>
+            <p class="act-label mono">Acte II · Deuxième pôle</p>
+            <h2 class="pole__title kinetic" id="pole2-title">Tour&shy;nées</h2>
+            <p class="pole__text">
+              Une date, puis dix. Une ville, puis une région. Nous mettons la route en ordre —
+              calendrier, déplacements, accueil — pour que chaque soir ait la force du premier.
+            </p>
+            <svg class="pole__art" viewBox="0 0 400 300" aria-hidden="true" focusable="false">
+              <rect width="400" height="300" fill="none"/>
+              <path d="M0 140 H400" stroke="#27f57a" stroke-opacity=".25" stroke-width="1"/>
+              <polygon points="185,140 215,140 400,300 0,300" fill="#141111"/>
+              <g class="art-dashes" fill="#27f57a">
+                <polygon points="198,150 202,150 203,160 197,160"/>
+                <polygon points="197,172 203,172 205,190 195,190"/>
+                <polygon points="195,206 205,206 208,232 192,232"/>
+                <polygon points="192,252 208,252 212,290 188,290"/>
+              </g>
+              <g transform="translate(300 60)">
+                <rect x="0" y="0" width="86" height="46" rx="4" fill="#0f8f47"/>
+                <rect x="4" y="4" width="78" height="38" rx="2" fill="none" stroke="#f2e9d8" stroke-width="2"/>
+                <text x="43" y="20" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#f2e9d8">PROCHAINE</text>
+                <text x="43" y="34" text-anchor="middle" font-family="DM Mono, monospace" font-size="10" fill="#f2e9d8">DATE →</text>
+                <rect x="40" y="46" width="6" height="94" fill="#2b2626"/>
+              </g>
+              <g transform="translate(30 196)">
+                <rect width="92" height="56" rx="4" fill="#1d1919" stroke="#3a3333" stroke-width="2"/>
+                <rect x="0" y="22" width="92" height="6" fill="#3a3333"/>
+                <text x="46" y="46" text-anchor="middle" font-family="Big Shoulders Display, sans-serif" font-weight="800" font-size="14" fill="#c4162a">EXIT 0.1</text>
+                <rect x="10" y="-38" width="70" height="38" rx="4" fill="#1d1919" stroke="#3a3333" stroke-width="2"/>
+                <text x="45" y="-14" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" fill="#8a8380">FRAGILE</text>
+              </g>
+            </svg>
+          </div>
+        </article>
+
+        <article class="pole pole--fete" aria-labelledby="pole3-title">
+          <span class="pole__ghost" aria-hidden="true">en fête · en fête ·</span>
+          <div class="pole__inner">
+            <p class="pole__num" aria-hidden="true">03<small>/03</small></p>
+            <p class="act-label mono">Acte II · Troisième pôle</p>
+            <h2 class="pole__title kinetic" id="pole3-title">Événe&shy;ments</h2>
+            <p class="pole__text">
+              Une soirée, un lancement, un festival, une célébration : quand l'occasion mérite
+              une mise en scène, nous écrivons le programme et tenons le plateau jusqu'au bout de la nuit.
+            </p>
+            <svg class="pole__art" viewBox="0 0 400 300" aria-hidden="true" focusable="false">
+              <path d="M0 40 Q200 150 400 40" fill="none" stroke="#0b0a0a" stroke-width="2"/>
+              <path d="M0 110 Q200 210 400 110" fill="none" stroke="#0b0a0a" stroke-width="2"/>
+              <g class="art-bulbs">
+                <circle cx="40" cy="58" r="9" fill="#c4162a"/><circle cx="100" cy="80" r="9" fill="#0b0a0a"/><circle cx="160" cy="92" r="9" fill="#0f8f47"/>
+                <circle cx="220" cy="94" r="9" fill="#c4162a"/><circle cx="280" cy="85" r="9" fill="#0b0a0a"/><circle cx="340" cy="66" r="9" fill="#0f8f47"/>
+                <circle cx="60" cy="134" r="9" fill="#0f8f47"/><circle cx="130" cy="152" r="9" fill="#c4162a"/><circle cx="200" cy="160" r="9" fill="#0b0a0a"/>
+                <circle cx="270" cy="152" r="9" fill="#0f8f47"/><circle cx="340" cy="135" r="9" fill="#c4162a"/>
+              </g>
+              <g class="art-confetti">
+                <rect x="70" y="210" width="10" height="16" fill="#c4162a" transform="rotate(20 75 218)"/>
+                <rect x="150" y="240" width="10" height="16" fill="#0b0a0a" transform="rotate(-30 155 248)"/>
+                <rect x="230" y="215" width="10" height="16" fill="#0f8f47" transform="rotate(45 235 223)"/>
+                <rect x="310" y="245" width="10" height="16" fill="#c4162a" transform="rotate(-12 315 253)"/>
+                <circle cx="110" cy="270" r="5" fill="#0f8f47"/><circle cx="270" cy="280" r="5" fill="#0b0a0a"/><circle cx="360" cy="215" r="5" fill="#0b0a0a"/>
+              </g>
+            </svg>
+          </div>
+        </article>
+
+      </div>
+      <div class="poles__progress" aria-hidden="true"><i></i><i></i><i></i></div>
+    </section>
+
+    <!-- ============ ACTE III : LA ROUTE (carte) ============ -->
+    <section class="tour" id="tournee" aria-labelledby="tour-title">
+      <div class="tour__inner">
+        <div class="tour__head">
+          <p class="act-label mono">Acte III — La route</p>
+          <h2 class="tour__title" id="tour-title">Une tournée,<br><em>ça se dessine.</em></h2>
+          <p class="tour__note">
+            <span class="tag">exemple</span>
+            Tracé fictif pour illustrer le principe : les villes, les dates et les salles ci-dessous sont des exemples, pas une tournée annoncée.
+          </p>
+        </div>
+
+        <div class="tour__map">
+          <svg viewBox="0 0 660 630" role="img" aria-labelledby="map-title map-desc" focusable="false">
+            <title id="map-title">Carte de France stylisée</title>
+            <desc id="map-desc">Exemple de tracé de tournée partant de Moulins et passant par Clermont-Ferrand, Lyon, Marseille, Toulouse, Bordeaux, Nantes et Paris.</desc>
+            <defs>
+              <pattern id="mapDots" width="12" height="12" patternUnits="userSpaceOnUse">
+                <circle cx="6" cy="6" r="1.3" fill="#f2e9d8" fill-opacity=".22"/>
+              </pattern>
+              <filter id="routeGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <g class="map-land">
+              <path d="M339.1 29.0 L373.6 44.0 L415.2 74.0 L442.2 83.0 L448.5 104.0 L481.8 119.0 L506.7 123.8 L531.7 143.0 L581.6 153.2 L565.0 176.0 L556.6 212.0 L554.6 236.0 L531.7 242.0 L527.5 254.0 L494.2 278.0 L494.2 305.0 L523.4 308.0 L531.7 338.0 L523.4 356.0 L535.8 380.0 L515.0 392.0 L531.7 434.0 L552.5 464.0 L540.0 473.0 L515.0 500.0 L485.9 506.0 L463.0 494.0 L440.2 488.0 L411.0 482.0 L386.1 497.0 L367.4 518.0 L371.5 545.0 L344.5 551.0 L311.2 542.0 L269.6 524.0 L228.0 524.0 L190.6 506.0 L166.4 489.2 L180.2 476.0 L188.5 434.0 L190.6 386.0 L194.7 356.0 L190.6 326.0 L157.3 284.0 L149.0 257.0 L124.0 242.0 L94.9 227.0 L57.4 221.0 L45.0 206.0 L42.9 188.0 L57.4 173.0 L94.9 164.0 L124.0 179.0 L157.3 173.0 L173.9 170.0 L173.9 140.0 L159.4 110.0 L188.5 110.0 L194.7 131.0 L232.2 134.0 L248.8 125.0 L265.4 101.0 L302.9 86.0 L307.0 47.0 Z"/>
+              <path d="M631.5 518.0 L637.8 566.0 L623.2 608.0 L604.5 596.0 L598.2 566.0 L602.4 536.0 Z"/>
+            </g>
+            <g class="map-legs" filter="url(#routeGlow)">
+              <path class="leg" d="M379.0 297.8 Q384.2 323.8 368.6 345.2"/>
+              <path class="leg" d="M368.6 345.2 Q404.9 361.9 441.8 346.4"/>
+              <path class="leg" d="M441.8 346.4 Q485.3 415.3 463.9 494.0"/>
+              <path class="leg" d="M463.9 494.0 Q386.1 449.0 300.4 476.0"/>
+              <path class="leg" d="M300.4 476.0 Q242.0 457.3 216.4 401.6"/>
+              <path class="leg" d="M216.4 401.6 Q227.6 321.3 176.0 258.8"/>
+              <path class="leg" d="M176.0 258.8 Q235.5 173.9 338.2 160.4"/>
+            </g>
+            <g class="map-cities">
+              <g class="city city--home" transform="translate(379 297.8)"><circle class="city__halo" r="16"/><circle class="city__dot" r="7"/><text x="14" y="-10">Moulins</text></g>
+              <g class="city" transform="translate(368.6 345.2)"><circle class="city__halo" r="12"/><circle class="city__dot" r="5"/><text x="-12" y="24" text-anchor="end">Clermont-Fd</text></g>
+              <g class="city" transform="translate(441.8 346.4)"><circle class="city__halo" r="12"/><circle class="city__dot" r="5"/><text x="12" y="-10">Lyon</text></g>
+              <g class="city" transform="translate(463.9 494)"><circle class="city__halo" r="12"/><circle class="city__dot" r="5"/><text x="10" y="28">Marseille</text></g>
+              <g class="city" transform="translate(300.4 476)"><circle class="city__halo" r="12"/><circle class="city__dot" r="5"/><text x="-8" y="28" text-anchor="middle">Toulouse</text></g>
+              <g class="city" transform="translate(216.4 401.6)"><circle class="city__halo" r="12"/><circle class="city__dot" r="5"/><text x="-14" y="6" text-anchor="end">Bordeaux</text></g>
+              <g class="city" transform="translate(176 258.8)"><circle class="city__halo" r="12"/><circle class="city__dot" r="5"/><text x="-14" y="6" text-anchor="end">Nantes</text></g>
+              <g class="city" transform="translate(338.2 160.4)"><circle class="city__halo" r="12"/><circle class="city__dot" r="5"/><text x="12" y="-10">Paris</text></g>
+            </g>
+            <g class="map-marker"><circle r="9" class="map-marker__ring"/><circle r="4" class="map-marker__core"/></g>
+          </svg>
+        </div>
+
+        <ol class="tour__stops">
+          <li class="stop"><span class="stop__date mono">Départ</span><span class="stop__city">Moulins</span><span class="stop__venue mono">Le siège, 46 bd de Courtais</span></li>
+          <li class="stop"><span class="stop__date mono">JJ.MM <span class="tag">exemple</span></span><span class="stop__city">Clermont-Ferrand</span><span class="stop__venue mono">Salle [exemple]</span></li>
+          <li class="stop"><span class="stop__date mono">JJ.MM <span class="tag">exemple</span></span><span class="stop__city">Lyon</span><span class="stop__venue mono">Salle [exemple]</span></li>
+          <li class="stop"><span class="stop__date mono">JJ.MM <span class="tag">exemple</span></span><span class="stop__city">Marseille</span><span class="stop__venue mono">Salle [exemple]</span></li>
+          <li class="stop"><span class="stop__date mono">JJ.MM <span class="tag">exemple</span></span><span class="stop__city">Toulouse</span><span class="stop__venue mono">Salle [exemple]</span></li>
+          <li class="stop"><span class="stop__date mono">JJ.MM <span class="tag">exemple</span></span><span class="stop__city">Bordeaux</span><span class="stop__venue mono">Salle [exemple]</span></li>
+          <li class="stop"><span class="stop__date mono">JJ.MM <span class="tag">exemple</span></span><span class="stop__city">Nantes</span><span class="stop__venue mono">Salle [exemple]</span></li>
+          <li class="stop"><span class="stop__date mono">JJ.MM <span class="tag">exemple</span></span><span class="stop__city">Paris</span><span class="stop__venue mono">Salle [exemple]</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ ACTE IV : L'AFFICHE (billets) ============ -->
+    <section class="agenda" id="agenda" aria-labelledby="agenda-title">
+      <div class="agenda__head">
+        <p class="act-label mono">Acte IV — L'affiche</p>
+        <h2 class="agenda__title" id="agenda-title" data-reveal>Prochainement<br><em>à l'affiche</em></h2>
+        <p class="agenda__note" data-reveal>
+          La programmation sera annoncée ici. En attendant, détachez un talon :
+          les billets attendent leurs dates.
+        </p>
+      </div>
+
+      <ul class="tickets">
+        <li class="ticket ticket--velours" data-reveal>
+          <div class="ticket__main">
+            <p class="ticket__brand mono">EXIT 0.1 présente</p>
+            <h3 class="ticket__title">[à compléter]</h3>
+            <p class="ticket__genre mono">Spectacle vivant</p>
+            <dl class="ticket__info">
+              <div><dt>Date</dt><dd>[à compléter]</dd></div>
+              <div><dt>Heure</dt><dd>[à compléter]</dd></div>
+              <div><dt>Lieu</dt><dd>[à compléter]</dd></div>
+            </dl>
+            <p class="ticket__no mono" aria-hidden="true">N° 0001</p>
+          </div>
+          <div class="ticket__stub">
+            <p class="ticket__admit">Entrée</p>
+            <p class="ticket__seat mono">Rang —<br>Place —</p>
+            <p class="ticket__price mono">Tarif<br>[à compléter]</p>
+            <span class="ticket__barcode" aria-hidden="true"></span>
+            <button class="ticket__tear mono" type="button" aria-pressed="false">Détacher</button>
+          </div>
+        </li>
+
+        <li class="ticket ticket--exit" data-reveal>
+          <div class="ticket__main">
+            <p class="ticket__brand mono">EXIT 0.1 présente</p>
+            <h3 class="ticket__title">[à compléter]</h3>
+            <p class="ticket__genre mono">Tournée</p>
+            <dl class="ticket__info">
+              <div><dt>Date</dt><dd>[à compléter]</dd></div>
+              <div><dt>Heure</dt><dd>[à compléter]</dd></div>
+              <div><dt>Lieu</dt><dd>[à compléter]</dd></div>
+            </dl>
+            <p class="ticket__no mono" aria-hidden="true">N° 0002</p>
+          </div>
+          <div class="ticket__stub">
+            <p class="ticket__admit">Entrée</p>
+            <p class="ticket__seat mono">Rang —<br>Place —</p>
+            <p class="ticket__price mono">Tarif<br>[à compléter]</p>
+            <span class="ticket__barcode" aria-hidden="true"></span>
+            <button class="ticket__tear mono" type="button" aria-pressed="false">Détacher</button>
+          </div>
+        </li>
+
+        <li class="ticket ticket--ivoire" data-reveal>
+          <div class="ticket__main">
+            <p class="ticket__brand mono">EXIT 0.1 présente</p>
+            <h3 class="ticket__title">[à compléter]</h3>
+            <p class="ticket__genre mono">Événement</p>
+            <dl class="ticket__info">
+              <div><dt>Date</dt><dd>[à compléter]</dd></div>
+              <div><dt>Heure</dt><dd>[à compléter]</dd></div>
+              <div><dt>Lieu</dt><dd>[à compléter]</dd></div>
+            </dl>
+            <p class="ticket__no mono" aria-hidden="true">N° 0003</p>
+          </div>
+          <div class="ticket__stub">
+            <p class="ticket__admit">Entrée</p>
+            <p class="ticket__seat mono">Rang —<br>Place —</p>
+            <p class="ticket__price mono">Tarif<br>[à compléter]</p>
+            <span class="ticket__barcode" aria-hidden="true"></span>
+            <button class="ticket__tear mono" type="button" aria-pressed="false">Détacher</button>
+          </div>
+        </li>
+
+        <li class="ticket ticket--noir" data-reveal>
+          <div class="ticket__main">
+            <p class="ticket__brand mono">EXIT 0.1 présente</p>
+            <h3 class="ticket__title">[à compléter]</h3>
+            <p class="ticket__genre mono">Spectacle vivant</p>
+            <dl class="ticket__info">
+              <div><dt>Date</dt><dd>[à compléter]</dd></div>
+              <div><dt>Heure</dt><dd>[à compléter]</dd></div>
+              <div><dt>Lieu</dt><dd>[à compléter]</dd></div>
+            </dl>
+            <p class="ticket__no mono" aria-hidden="true">N° 0004</p>
+          </div>
+          <div class="ticket__stub">
+            <p class="ticket__admit">Entrée</p>
+            <p class="ticket__seat mono">Rang —<br>Place —</p>
+            <p class="ticket__price mono">Tarif<br>[à compléter]</p>
+            <span class="ticket__barcode" aria-hidden="true"></span>
+            <button class="ticket__tear mono" type="button" aria-pressed="false">Détacher</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ COULISSES (emplacements photo) ============ -->
+    <section class="wings" aria-labelledby="wings-title">
+      <div class="wings__head">
+        <p class="act-label mono">Entracte — Coulisses</p>
+        <h2 class="wings__title" id="wings-title" data-reveal>Ici, bientôt,<br><em>vos images.</em></h2>
+      </div>
+      <div class="wings__grid">
+        <figure class="photo-slot wings__a" data-reveal>
+          <svg viewBox="0 0 400 260" aria-hidden="true" focusable="false">
+            <rect width="400" height="260" fill="#120f0f"/>
+            <g fill="#4a0710">
+              <path d="M20 200 q20 -30 40 0 v40 h-40z"/><path d="M70 200 q20 -30 40 0 v40 h-40z"/><path d="M120 200 q20 -30 40 0 v40 h-40z"/><path d="M170 200 q20 -30 40 0 v40 h-40z"/><path d="M220 200 q20 -30 40 0 v40 h-40z"/><path d="M270 200 q20 -30 40 0 v40 h-40z"/><path d="M320 200 q20 -30 40 0 v40 h-40z"/>
+            </g>
+            <g fill="#6e0b17">
+              <path d="M45 150 q18 -26 36 0 v34 h-36z"/><path d="M90 150 q18 -26 36 0 v34 h-36z"/><path d="M135 150 q18 -26 36 0 v34 h-36z"/><path d="M180 150 q18 -26 36 0 v34 h-36z"/><path d="M225 150 q18 -26 36 0 v34 h-36z"/><path d="M270 150 q18 -26 36 0 v34 h-36z"/><path d="M315 150 q18 -26 36 0 v34 h-36z"/>
+            </g>
+            <rect x="60" y="20" width="280" height="90" fill="#1d1919"/>
+            <rect x="160" y="50" width="80" height="30" fill="#27f57a" opacity=".85"/>
+          </svg>
+          <figcaption class="photo-slot__label"><span class="photo-slot__icon" aria-hidden="true"></span>photo à venir — la salle</figcaption>
+        </figure>
+        <figure class="photo-slot wings__b" data-reveal>
+          <svg viewBox="0 0 300 380" aria-hidden="true" focusable="false">
+            <rect width="300" height="380" fill="#120f0f"/>
+            <rect x="50" y="60" width="200" height="200" rx="4" fill="#1d1919" stroke="#3a3333" stroke-width="3"/>
+            <g fill="#ffe8b0">
+              <circle cx="50" cy="80" r="8"/><circle cx="50" cy="130" r="8"/><circle cx="50" cy="180" r="8"/><circle cx="50" cy="230" r="8"/>
+              <circle cx="250" cy="80" r="8"/><circle cx="250" cy="130" r="8"/><circle cx="250" cy="180" r="8"/><circle cx="250" cy="230" r="8"/>
+              <circle cx="100" cy="60" r="8"/><circle cx="150" cy="60" r="8"/><circle cx="200" cy="60" r="8"/>
+            </g>
+            <rect x="30" y="270" width="240" height="14" fill="#4a0710"/>
+          </svg>
+          <figcaption class="photo-slot__label"><span class="photo-slot__icon" aria-hidden="true"></span>photo à venir — les loges</figcaption>
+        </figure>
+        <figure class="photo-slot wings__c" data-reveal>
+          <svg viewBox="0 0 400 260" aria-hidden="true" focusable="false">
+            <rect width="400" height="260" fill="#120f0f"/>
+            <g fill="#2b2626"><circle cx="120" cy="110" r="26"/><circle cx="200" cy="100" r="28"/><circle cx="280" cy="110" r="26"/></g>
+            <g fill="#1d1919"><path d="M70 260 q50 -110 100 0z"/><path d="M145 260 q55 -125 110 0z"/><path d="M230 260 q50 -110 100 0z"/></g>
+          </svg>
+          <figcaption class="photo-slot__label"><span class="photo-slot__icon" aria-hidden="true"></span>photo à venir — l'équipe</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ RAPPEL : CONTACT ============ -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact__sign" aria-hidden="true">
+        <svg class="runner" viewBox="0 0 40 40" focusable="false">
+          <circle cx="25" cy="7" r="4"/>
+          <path d="M22 13 L17.5 24 M21.5 14.5 L27.5 18 L32 16 M21.5 14.5 L15.5 17 L12 21.5 M17.5 24 L24 28 L24.5 35 M17.5 24 L13.5 30 L7 31"/>
+        </svg>
+        <span>Sortie</span>
+        <svg class="contact__arrow" viewBox="0 0 40 24" focusable="false"><path d="M2 12 H34 M24 3 L35 12 L24 21"/></svg>
+      </div>
+      <p class="act-label mono">Rappel — Contact</p>
+      <h2 class="contact__title" id="contact-title">La sortie,<br><em>c'est par ici.</em></h2>
+      <p class="contact__lede">Un spectacle à accueillir, une tournée à organiser, un événement à imaginer ? Écrivez-nous, on vous rappelle.</p>
+
+      <dl class="contact__list">
+        <div class="contact__item" data-reveal>
+          <dt class="mono">Adresse</dt>
+          <dd>46 Boulevard de Courtais<br>03000 Moulins</dd>
+        </div>
+        <div class="contact__item" data-reveal>
+          <dt class="mono">Téléphone</dt>
+          <dd><span class="placeholder">[à compléter]</span></dd>
+        </div>
+        <div class="contact__item" data-reveal>
+          <dt class="mono">E-mail</dt>
+          <dd><span class="placeholder">[à compléter]</span></dd>
+        </div>
+        <div class="contact__item" data-reveal>
+          <dt class="mono">Licence d'entrepreneur de spectacles</dt>
+          <dd><span class="placeholder">[à compléter]</span></dd>
+        </div>
+      </dl>
+
+      <a class="btn btn--exit btn--big magnetic" href="https://www.openstreetmap.org/search?query=46%20Boulevard%20de%20Courtais%2C%2003000%20Moulins" target="_blank" rel="noopener">
+        <span>Voir l'adresse sur la carte</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6"/></svg>
+        <span class="visually-hidden">(ouvre OpenStreetMap dans un nouvel onglet)</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__big" aria-hidden="true">EXIT 0.1</div>
+    <div class="footer__row">
+      <p>EXIT 0.1 · SAS · SIREN 132 216 748</p>
+      <p>46 Boulevard de Courtais, 03000 Moulins</p>
+      <p><a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+    <p class="footer__demo mono">Maquette de démonstration — contenus à valider avec EXIT 0.1</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js" defer></script>
+  <script src="script.js" defer></script>
+<div role="note" style="position:fixed;left:10px;bottom:10px;z-index:2147483647;pointer-events:none;font:600 11px/1.3 system-ui,sans-serif;letter-spacing:.02em;color:#fff;background:rgba(17,17,17,.78);padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)">Maquette de démonstration · site non officiel</div>
+</body>
+</html>

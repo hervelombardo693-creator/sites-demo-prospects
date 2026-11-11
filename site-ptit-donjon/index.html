@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Le P’tit Donjon — Restauration rapide au Donjon (03) · sur place, à emporter, livraison</title>
+  <meta name="description" content="Le P’tit Donjon, restauration rapide au 5 rue Gambetta, 03130 Le Donjon : sur place, à emporter et en livraison.">
+  <meta name="theme-color" content="#D7261A">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Le P’tit Donjon">
+  <meta property="og:title" content="Le P’tit Donjon — Street-food au Donjon (03)">
+  <meta property="og:description" content="Restauration rapide sur place, à emporter et en livraison, 5 rue Gambetta, 03130 Le Donjon.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="La mascotte du P’tit Donjon, une petite tour souriante avec un drapeau, sur fond rouge tomate.">
+  <!-- og:url et lien canonique : [à compléter] quand le nom de domaine sera choisi -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Permanent+Marker&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('js-anim');
+      // Filet de sécurité : si les scripts ne se chargent pas, tout redevient visible.
+      setTimeout(function () { if (!window.__donjonReady) d.classList.remove('js-anim'); }, 4000);
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FastFoodRestaurant",
+    "name": "Le P'tit Donjon",
+    "legalName": "Le P'tit Donjon",
+    "description": "Restauration rapide sur place, à emporter et en livraison.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5 Rue Gambetta",
+      "postalCode": "03130",
+      "addressLocality": "Le Donjon",
+      "addressCountry": "FR"
+    },
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "SIREN",
+      "value": "131773418"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- ========== Sprite d'illustrations (dessinées à la main pour le site) ========== -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-burger" viewBox="0 0 100 100">
+        <path d="M18 74 H82 Q82 86 70 86 H30 Q18 86 18 74 Z" fill="#E8973A" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="15" y="60" width="70" height="13" rx="6.5" fill="#6B3420" stroke="#1A1410" stroke-width="4"/>
+        <path d="M17 56 H83 L78 63 L70 58 L62 67 L54 58 L44 65 L36 58 L28 64 Z" fill="#F6B926" stroke="#1A1410" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M14 52 q6 -6 12 0 t12 0 t12 0 t12 0 t12 0 t12 0" fill="none" stroke="#1A1410" stroke-width="10" stroke-linecap="round"/>
+        <path d="M14 52 q6 -6 12 0 t12 0 t12 0 t12 0 t12 0 t12 0" fill="none" stroke="#4DB357" stroke-width="5" stroke-linecap="round"/>
+        <path d="M18 48 Q18 18 50 18 Q82 18 82 48 Z" fill="#E8973A" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+        <g fill="#FFF3DC"><ellipse cx="36" cy="33" rx="3.4" ry="2" transform="rotate(-25 36 33)"/><ellipse cx="50" cy="27" rx="3.4" ry="2"/><ellipse cx="64" cy="33" rx="3.4" ry="2" transform="rotate(25 64 33)"/><ellipse cx="44" cy="40" rx="3" ry="1.8"/><ellipse cx="58" cy="41" rx="3" ry="1.8"/></g>
+      </symbol>
+      <symbol id="i-tacos" viewBox="0 0 100 100">
+        <g transform="rotate(-10 50 54)">
+          <rect x="12" y="30" width="76" height="48" rx="16" fill="#F1C27D" stroke="#1A1410" stroke-width="4"/>
+          <path d="M28 36 L36 72 M44 34 L52 74 M60 34 L68 72" stroke="#A9612C" stroke-width="5" stroke-linecap="round"/>
+          <path d="M78 34 Q90 54 78 74" fill="#F6B926" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M80 44 h8 M80 54 h10 M80 64 h8" stroke="#D7261A" stroke-width="3" stroke-linecap="round"/>
+        </g>
+      </symbol>
+      <symbol id="i-fries" viewBox="0 0 100 100">
+        <g fill="#F6B926" stroke="#1A1410" stroke-width="3.5" stroke-linejoin="round">
+          <rect x="28" y="18" width="9" height="42" rx="2" transform="rotate(-12 32 40)"/>
+          <rect x="40" y="10" width="9" height="46" rx="2" transform="rotate(-4 44 34)"/>
+          <rect x="52" y="12" width="9" height="44" rx="2" transform="rotate(6 56 34)"/>
+          <rect x="63" y="20" width="9" height="40" rx="2" transform="rotate(14 67 40)"/>
+        </g>
+        <path d="M22 44 H78 L70 88 H30 Z" fill="#D7261A" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M40 60 h6 v-5 h4 v5 h4 v-5 h4 v5 h2 v14 h-20 z" fill="#FFF3DC"/>
+      </symbol>
+      <symbol id="i-nuggets" viewBox="0 0 100 100">
+        <path d="M50 22 q4 -10 12 -12" fill="none" stroke="#1A1410" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M64 4 l2 5 5 1 -4 3 1 5 -4 -3 -4 3 1 -5 -4 -3 5 -1z" fill="#F6B926" stroke="#1A1410" stroke-width="2"/>
+        <g fill="#E8A23A" stroke="#1A1410" stroke-width="4">
+          <circle cx="32" cy="64" r="19"/><circle cx="68" cy="64" r="19"/><circle cx="50" cy="38" r="17"/>
+        </g>
+        <g fill="#A9612C"><circle cx="26" cy="60" r="2.2"/><circle cx="36" cy="70" r="2"/><circle cx="64" cy="58" r="2.2"/><circle cx="72" cy="70" r="2"/><circle cx="46" cy="34" r="2"/><circle cx="55" cy="42" r="2"/></g>
+      </symbol>
+      <symbol id="i-cookie" viewBox="0 0 100 100">
+        <circle cx="50" cy="52" r="33" fill="#C98A4B" stroke="#1A1410" stroke-width="4"/>
+        <g fill="#3A2116"><ellipse cx="38" cy="40" rx="5" ry="4"/><ellipse cx="60" cy="36" rx="4" ry="3.5"/><ellipse cx="64" cy="58" rx="5" ry="4"/><ellipse cx="44" cy="62" rx="4.5" ry="3.5"/><ellipse cx="52" cy="50" rx="3" ry="2.5"/><ellipse cx="34" cy="54" rx="3" ry="2.6"/></g>
+      </symbol>
+      <symbol id="i-sundae" viewBox="0 0 100 100">
+        <path d="M26 54 H74 L62 88 H38 Z" fill="#FFF3DC" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M30 64 H70" stroke="#D7261A" stroke-width="5"/>
+        <path d="M28 54 Q28 38 50 38 Q72 38 72 54 Z" fill="#FFD6DE" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M36 40 Q38 28 50 28 Q62 28 64 40" fill="#FFF3DC" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M40 50 q5 -6 10 0 t10 0" fill="none" stroke="#6B3420" stroke-width="4" stroke-linecap="round"/>
+        <path d="M52 20 q2 -8 8 -10" fill="none" stroke="#1A1410" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="50" cy="22" r="7" fill="#D7261A" stroke="#1A1410" stroke-width="3.5"/>
+      </symbol>
+      <symbol id="i-soda" viewBox="0 0 100 100">
+        <path d="M60 24 L68 4" stroke="#1A1410" stroke-width="8" stroke-linecap="round"/>
+        <path d="M60 24 L68 4" stroke="#F6B926" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M30 30 H70 L63 90 H37 Z" fill="#D7261A" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M33 52 q8 -6 17 0 t17 0 L65 70 q-8 6 -15 0 t-16 0 Z" fill="#FFF3DC"/>
+        <rect x="26" y="22" width="48" height="10" rx="4" fill="#FFF3DC" stroke="#1A1410" stroke-width="4"/>
+      </symbol>
+      <symbol id="i-shake" viewBox="0 0 100 100">
+        <path d="M58 26 L66 4" stroke="#1A1410" stroke-width="8" stroke-linecap="round"/>
+        <path d="M58 26 L66 4" stroke="#FFF3DC" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M32 38 H68 L62 90 H38 Z" fill="#F7C6D0" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M28 38 Q28 22 50 24 Q72 22 72 38 Z" fill="#FFF3DC" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="44" cy="22" r="6" fill="#D7261A" stroke="#1A1410" stroke-width="3"/>
+        <path d="M40 54 v24 M50 54 v28 M60 54 v24" stroke="#fff" stroke-opacity=".6" stroke-width="3" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-tower" viewBox="0 0 100 100">
+        <path d="M24 92 V42 h-6 V18 h12 v10 h8 V18 h10 v10 h8 V18 h10 v10 h8 V18 h12 v24 h-6 V92 Z" fill="#F3D9A8" stroke="#1A1410" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M42 92 V74 q0 -10 8 -10 q8 0 8 10 V92" fill="#8A4A22" stroke="#1A1410" stroke-width="4"/>
+        <circle cx="40" cy="54" r="4" fill="#1A1410"/><circle cx="60" cy="54" r="4" fill="#1A1410"/>
+      </symbol>
+      <symbol id="i-camera" viewBox="0 0 64 64">
+        <path d="M8 22 Q8 18 12 18 H22 L26 12 H38 L42 18 H52 Q56 18 56 22 V48 Q56 52 52 52 H12 Q8 52 8 48 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="32" cy="35" r="10" fill="none" stroke="currentColor" stroke-width="4"/>
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z" fill="currentColor"/>
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ========== En-tête ========== -->
+  <header class="site-header" id="haut">
+    <div class="container header-inner">
+      <a class="logo" href="#accueil" aria-label="Le P’tit Donjon, retour en haut">
+        <svg class="logo-mark" aria-hidden="true"><use href="#i-tower"/></svg>
+        <span class="logo-word">Le P’tit<br>Donjon</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
+        <span class="nav-toggle-burger" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="nav-toggle-label">Menu</span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#burger">Le burger</a></li>
+          <li><a href="#menu">La carte</a></li>
+          <li><a href="#commander">Commander</a></li>
+          <li><a href="#infos">Infos</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--mustard btn--sm header-call" href="#infos"><span><svg aria-hidden="true"><use href="#i-phone"/></svg> Appeler</span></a>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="hero-dots" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Street-food · Le Donjon (03)</p>
+          <h1 class="hero-title" id="hero-title">
+            <span class="sr-only">Le P’tit Donjon</span>
+            <span class="t-line t-line--small" aria-hidden="true" data-stamp>Le P’tit</span>
+            <span class="t-line t-line--big" aria-hidden="true" data-stamp>Donjon</span>
+          </h1>
+          <p class="hero-lead" data-hero-fade>Ici, on croque comme un roi. Restauration rapide au <strong>5&nbsp;rue Gambetta</strong>&nbsp;: sur place, à emporter ou livrée chez vous.</p>
+          <div class="hero-ctas" data-hero-fade>
+            <a class="btn btn--mustard" href="#menu"><span>Voir la carte</span></a>
+            <a class="btn btn--cream" href="#commander"><span>Commander</span></a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="sunburst" aria-hidden="true"></div>
+          <div class="mascot-wrap">
+            <svg class="mascot" viewBox="0 0 300 420" role="img" aria-labelledby="mascot-title">
+              <title id="mascot-title">La mascotte du P’tit Donjon : une petite tour de château souriante, un drapeau au sommet et un mini burger à la main</title>
+              <ellipse class="m-shadow" cx="150" cy="404" rx="96" ry="11" fill="#1A1410" opacity=".28"/>
+              <!-- pieds -->
+              <ellipse cx="112" cy="394" rx="31" ry="13" fill="#1A1410"/>
+              <ellipse cx="188" cy="394" rx="31" ry="13" fill="#1A1410"/>
+              <!-- drapeau -->
+              <g class="m-flag">
+                <line x1="150" y1="112" x2="150" y2="12" stroke="#1A1410" stroke-width="7" stroke-linecap="round"/>
+                <g class="m-flag-wave">
+                  <path d="M153 16 C178 8 200 28 236 18 L236 56 C200 66 178 46 153 54 Z" fill="#F6B926" stroke="#1A1410" stroke-width="5" stroke-linejoin="round"/>
+                  <path d="M183 36 q0 -10 12 -10 q12 0 12 10 z" fill="#D7261A"/>
+                  <rect x="182" y="38" width="26" height="4" rx="2" fill="#1A1410"/>
+                  <path d="M183 44 h24 q0 6 -6 6 h-12 q-6 0 -6 -6z" fill="#D7261A"/>
+                </g>
+                <circle cx="150" cy="10" r="7" fill="#F6B926" stroke="#1A1410" stroke-width="4"/>
+              </g>
+              <!-- corps -->
+              <path d="M84 140 H216 L230 380 Q231 392 219 392 H81 Q69 392 70 380 Z" fill="#F3D9A8" stroke="#1A1410" stroke-width="7" stroke-linejoin="round"/>
+              <g stroke="#1A1410" stroke-opacity=".22" stroke-width="4" stroke-linecap="round" fill="none">
+                <path d="M96 170 h24 M194 178 h22 M90 300 h22 M206 318 h16 M100 352 h18 M190 360 h22 M90 232 h12 M210 250 h10"/>
+              </g>
+              <!-- créneaux -->
+              <g fill="#F8E6C2" stroke="#1A1410" stroke-width="7" stroke-linejoin="round">
+                <rect x="62" y="70" width="34" height="44" rx="7"/>
+                <rect x="108" y="70" width="32" height="44" rx="7"/>
+                <rect x="160" y="70" width="32" height="44" rx="7"/>
+                <rect x="204" y="70" width="34" height="44" rx="7"/>
+                <rect x="58" y="104" width="184" height="44" rx="10"/>
+              </g>
+              <!-- visage -->
+              <path d="M104 166 q16 -10 32 -2" fill="none" stroke="#1A1410" stroke-width="5" stroke-linecap="round"/>
+              <path d="M164 164 q16 -8 32 2" fill="none" stroke="#1A1410" stroke-width="5" stroke-linecap="round"/>
+              <g class="m-eye">
+                <ellipse cx="122" cy="198" rx="19" ry="23" fill="#fff" stroke="#1A1410" stroke-width="5"/>
+                <g class="m-pupil"><circle cx="124" cy="202" r="9" fill="#1A1410"/><circle cx="127" cy="198" r="3" fill="#fff"/></g>
+              </g>
+              <g class="m-eye">
+                <ellipse cx="178" cy="198" rx="19" ry="23" fill="#fff" stroke="#1A1410" stroke-width="5"/>
+                <g class="m-pupil"><circle cx="176" cy="202" r="9" fill="#1A1410"/><circle cx="179" cy="198" r="3" fill="#fff"/></g>
+              </g>
+              <ellipse cx="97" cy="238" rx="14" ry="8" fill="#F0412F" opacity=".45"/>
+              <ellipse cx="203" cy="238" rx="14" ry="8" fill="#F0412F" opacity=".45"/>
+              <path d="M124 234 Q150 270 176 234 Q150 244 124 234 Z" fill="#1A1410" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M138 251 Q150 243 162 251 Q157 259 150 259 Q143 259 138 251 Z" fill="#F0412F"/>
+              <!-- meurtrières -->
+              <rect x="92" y="286" width="10" height="28" rx="5" fill="#1A1410"/>
+              <rect x="198" y="286" width="10" height="28" rx="5" fill="#1A1410"/>
+              <!-- porte -->
+              <path d="M124 392 V334 Q124 306 150 306 Q176 306 176 334 V392 Z" fill="#8A4A22" stroke="#1A1410" stroke-width="6" stroke-linejoin="round"/>
+              <path d="M141 312 V390 M159 312 V390" stroke="#1A1410" stroke-opacity=".35" stroke-width="3"/>
+              <circle cx="167" cy="358" r="3.5" fill="#F6B926"/>
+              <!-- bras droit + mini burger -->
+              <g class="m-arm-right">
+                <path d="M224 258 Q252 268 258 296" fill="none" stroke="#1A1410" stroke-width="20" stroke-linecap="round"/>
+                <path d="M224 258 Q252 268 258 296" fill="none" stroke="#F3D9A8" stroke-width="10" stroke-linecap="round"/>
+                <g transform="translate(236 280)">
+                  <path d="M0 14 q0 -14 20 -14 q20 0 20 14 z" fill="#E8973A" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+                  <rect x="-2" y="14" width="44" height="5" rx="2.5" fill="#4DB357" stroke="#1A1410" stroke-width="2.5"/>
+                  <rect x="0" y="19" width="40" height="8" rx="4" fill="#6B3420" stroke="#1A1410" stroke-width="3"/>
+                  <rect x="1" y="27" width="38" height="8" rx="4" fill="#E8973A" stroke="#1A1410" stroke-width="3.5"/>
+                </g>
+                <circle cx="258" cy="306" r="13" fill="#F3D9A8" stroke="#1A1410" stroke-width="5"/>
+              </g>
+              <!-- bras gauche qui salue -->
+              <g class="m-arm-left">
+                <path d="M78 262 Q48 250 38 214" fill="none" stroke="#1A1410" stroke-width="20" stroke-linecap="round"/>
+                <path d="M78 262 Q48 250 38 214" fill="none" stroke="#F3D9A8" stroke-width="10" stroke-linecap="round"/>
+                <circle cx="37" cy="206" r="14" fill="#F3D9A8" stroke="#1A1410" stroke-width="5"/>
+              </g>
+            </svg>
+          </div>
+          <span class="hero-sticker hero-sticker--new" aria-hidden="true"><span>Tout<br>neuf&nbsp;!</span></span>
+          <span class="hero-sticker hero-sticker--modes" aria-hidden="true">Sur place · À emporter · Livraison</span>
+          <span class="hero-sticker hero-sticker--hand" aria-hidden="true">Croque le donjon&nbsp;!</span>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#burger"><span class="sr-only">Descendre vers la suite</span><span aria-hidden="true">↓</span></a>
+    </section>
+
+    <!-- ========== MARQUEE 1 ========== -->
+    <div class="marquee marquee--ink" aria-hidden="true">
+      <div class="marquee-track" data-marquee="left">
+        <div class="marquee-group">
+          <span>Sur place</span><b>★</b><span>À emporter</span><b>★</b><span>En livraison</span><b>★</b><span>5 rue Gambetta</span><b>★</b><span>Le Donjon (03130)</span><b>★</b><span>Ça déborde, c’est normal</span><b>★</b>
+        </div>
+        <div class="marquee-group">
+          <span>Sur place</span><b>★</b><span>À emporter</span><b>★</b><span>En livraison</span><b>★</b><span>5 rue Gambetta</span><b>★</b><span>Le Donjon (03130)</span><b>★</b><span>Ça déborde, c’est normal</span><b>★</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== BURGER QUI S'ASSEMBLE ========== -->
+    <section class="build grain" id="burger" aria-labelledby="build-title">
+      <div class="build-pin">
+        <div class="container build-grid">
+          <div class="build-copy">
+            <p class="kicker">Étage par étage</p>
+            <h2 class="h2" id="build-title">Montez votre donjon.</h2>
+            <p class="build-lead">Faites défiler&nbsp;: chaque étage tombe à sa place, des fondations jusqu’à l’étendard.</p>
+            <ol class="build-steps">
+              <li><b>Les fondations</b> <span>le pain du bas</span></li>
+              <li><b>Le rempart</b> <span>le steak</span></li>
+              <li><b>La douve</b> <span>le fromage fondu</span></li>
+              <li><b>Les boulets rouges</b> <span>la tomate</span></li>
+              <li><b>Le jardin du roi</b> <span>la salade</span></li>
+              <li><b>Les anneaux</b> <span>les oignons</span></li>
+              <li><b>La toiture</b> <span>le pain du haut</span></li>
+              <li><b>L’étendard</b> <span>le pic à drapeau</span></li>
+            </ol>
+            <p class="note">Recette d’exemple pour la démo — composition réelle <span class="ph">[à compléter]</span></p>
+          </div>
+
+          <div class="build-stage">
+            <div class="build-halo" aria-hidden="true"></div>
+            <svg class="burger" viewBox="0 0 400 470" role="img" aria-labelledby="burger-title">
+              <title id="burger-title">Illustration d’un burger qui s’assemble étage par étage, surmonté d’un petit drapeau</title>
+              <ellipse class="b-plate" cx="200" cy="448" rx="160" ry="14" fill="#1A1410" opacity=".18"/>
+              <g class="b-layer" data-layer="1">
+                <path d="M68 392 H332 Q332 440 290 442 H110 Q68 440 68 392 Z" fill="#E8973A" stroke="#1A1410" stroke-width="6" stroke-linejoin="round"/>
+                <path d="M86 402 H314" stroke="#FFF3DC" stroke-opacity=".45" stroke-width="5" stroke-linecap="round"/>
+              </g>
+              <g class="b-layer" data-layer="2">
+                <rect x="58" y="350" width="284" height="46" rx="23" fill="#6B3420" stroke="#1A1410" stroke-width="6"/>
+                <path d="M92 364 l14 -6 M130 370 l16 -7 M178 362 l14 -6 M226 370 l16 -7 M270 362 l14 -6 M300 376 l12 -5 M110 384 l12 -5 M200 384 l12 -5" stroke="#A35A35" stroke-width="5" stroke-linecap="round"/>
+              </g>
+              <g class="b-layer" data-layer="3">
+                <path d="M52 336 H348 L340 354 L322 344 L308 372 L290 348 L264 360 L242 344 L216 378 L198 348 L172 358 L150 344 L128 368 L110 346 L86 358 L70 346 Z" fill="#F6B926" stroke="#1A1410" stroke-width="5" stroke-linejoin="round"/>
+              </g>
+              <g class="b-layer" data-layer="4">
+                <g fill="#F0412F" stroke="#1A1410" stroke-width="5">
+                  <ellipse cx="116" cy="328" rx="54" ry="14"/>
+                  <ellipse cx="284" cy="328" rx="54" ry="14"/>
+                  <ellipse cx="200" cy="326" rx="54" ry="14"/>
+                </g>
+                <g fill="#FFD27A"><ellipse cx="100" cy="326" rx="6" ry="2.5"/><ellipse cx="130" cy="330" rx="6" ry="2.5"/><ellipse cx="188" cy="324" rx="6" ry="2.5"/><ellipse cx="214" cy="328" rx="6" ry="2.5"/><ellipse cx="270" cy="326" rx="6" ry="2.5"/><ellipse cx="298" cy="330" rx="6" ry="2.5"/></g>
+              </g>
+              <g class="b-layer" data-layer="5">
+                <path d="M50 308 q15 -14 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0" fill="none" stroke="#1A1410" stroke-width="28" stroke-linecap="round"/>
+                <path d="M50 308 q15 -14 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0" fill="none" stroke="#4DB357" stroke-width="18" stroke-linecap="round"/>
+                <path d="M60 306 q15 -10 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0" fill="none" stroke="#8ED17A" stroke-width="4" stroke-linecap="round"/>
+              </g>
+              <g class="b-layer" data-layer="6">
+                <g fill="none">
+                  <g stroke="#1A1410" stroke-width="11"><ellipse cx="108" cy="292" rx="28" ry="8"/><ellipse cx="170" cy="294" rx="28" ry="8"/><ellipse cx="232" cy="292" rx="28" ry="8"/><ellipse cx="292" cy="294" rx="28" ry="8"/></g>
+                  <g stroke="#E6C7F0" stroke-width="5"><ellipse cx="108" cy="292" rx="28" ry="8"/><ellipse cx="170" cy="294" rx="28" ry="8"/><ellipse cx="232" cy="292" rx="28" ry="8"/><ellipse cx="292" cy="294" rx="28" ry="8"/></g>
+                </g>
+              </g>
+              <g class="b-layer" data-layer="7">
+                <path d="M62 274 Q62 140 200 136 Q338 140 338 274 Q338 286 324 286 H76 Q62 286 62 274 Z" fill="#E8973A" stroke="#1A1410" stroke-width="6" stroke-linejoin="round"/>
+                <path d="M100 210 Q120 166 176 156" fill="none" stroke="#FFF3DC" stroke-opacity=".5" stroke-width="10" stroke-linecap="round"/>
+                <g fill="#FFF3DC" stroke="#1A1410" stroke-width="2">
+                  <ellipse cx="150" cy="190" rx="8" ry="4.5" transform="rotate(-25 150 190)"/>
+                  <ellipse cx="200" cy="170" rx="8" ry="4.5"/>
+                  <ellipse cx="252" cy="190" rx="8" ry="4.5" transform="rotate(25 252 190)"/>
+                  <ellipse cx="176" cy="220" rx="8" ry="4.5" transform="rotate(-10 176 220)"/>
+                  <ellipse cx="230" cy="226" rx="8" ry="4.5" transform="rotate(12 230 226)"/>
+                  <ellipse cx="290" cy="228" rx="8" ry="4.5" transform="rotate(30 290 228)"/>
+                  <ellipse cx="118" cy="236" rx="8" ry="4.5" transform="rotate(-30 118 236)"/>
+                  <ellipse cx="204" cy="252" rx="8" ry="4.5"/>
+                </g>
+              </g>
+              <g class="b-layer" data-layer="8">
+                <path d="M200 160 V40" stroke="#1A1410" stroke-width="11" stroke-linecap="round"/>
+                <path d="M200 160 V40" stroke="#D9A066" stroke-width="5" stroke-linecap="round"/>
+                <path d="M204 42 L268 58 L204 76 Z" fill="#D7261A" stroke="#1A1410" stroke-width="5" stroke-linejoin="round"/>
+                <path d="M216 52 l3 6 6 1 -4.5 4 1 6 -5.5 -3 -5.5 3 1 -6 -4.5 -4 6 -1z" fill="#F6B926"/>
+                <circle cx="200" cy="36" r="8" fill="#F6B926" stroke="#1A1410" stroke-width="4"/>
+              </g>
+            </svg>
+            <span class="miam" aria-hidden="true">Miam&nbsp;!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LA CARTE ========== -->
+    <section class="menu on-dark" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker kicker--mustard">La carte · exemples</p>
+          <h2 class="h2" id="menu-title">Le menu du château</h2>
+          <p class="section-lead">Les noms ci-dessous sont des idées pour la démo, marquées <span class="badge badge--inline">Exemple</span>. Produits, compositions et prix réels&nbsp;: <span class="ph ph--dark">[à compléter]</span></p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filtrer la carte">
+          <button type="button" class="chip" data-filter="all" aria-pressed="true">Tout</button>
+          <button type="button" class="chip" data-filter="burgers" aria-pressed="false">Burgers</button>
+          <button type="button" class="chip" data-filter="tacos" aria-pressed="false">Tacos</button>
+          <button type="button" class="chip" data-filter="sides" aria-pressed="false">Sides</button>
+          <button type="button" class="chip" data-filter="desserts" aria-pressed="false">Desserts</button>
+          <button type="button" class="chip" data-filter="boissons" aria-pressed="false">Boissons</button>
+        </div>
+        <p class="sr-only" id="filter-status" aria-live="polite"></p>
+
+        <ul class="cards">
+          <li class="card" data-cat="burgers" style="--r:-3deg; --tone:#F6B926">
+            <article class="card-inner">
+              <span class="badge">Exemple</span>
+              <div class="card-ill"><svg aria-hidden="true"><use href="#i-burger"/></svg></div>
+              <p class="card-cat">Burger</p>
+              <h3 class="card-title">Le Créneau</h3>
+              <p class="card-desc">Le classique, carré comme une tour.</p>
+              <p class="card-price">Prix <span class="ph">[à compléter]</span></p>
+            </article>
+          </li>
+          <li class="card" data-cat="burgers" style="--r:2.5deg; --tone:#F0412F">
+            <article class="card-inner">
+              <span class="badge">Exemple</span>
+              <div class="card-ill"><svg aria-hidden="true"><use href="#i-burger"/></svg></div>
+              <p class="card-cat">Burger</p>
+              <h3 class="card-title">Le Pont-Levis</h3>
+              <p class="card-desc">Double étage, on baisse la garde.</p>
+              <p class="card-price">Prix <span class="ph">[à compléter]</span></p>
+            </article>
+          </li>
+          <li class="card" data-cat="tacos" style="--r:-1.5deg; --tone:#FFF3DC">
+            <article class="card-inner">
+              <span class="badge">Exemple</span>
+              <div class="card-ill"><svg aria-hidden="true"><use href="#i-tacos"/></svg></div>
+              <p class="card-cat">Tacos</p>
+              <h3 class="card-title">Le Tacos du Guet</h3>
+              <p class="card-desc">Pour ceux qui veillent tard.</p>
+              <p class="card-price">Prix <span class="ph">[à compléter]</span></p>
+            </article>
+          </li>
+          <li class="card" data-cat="burgers" style="--r:3.5deg; --tone:#4DB357">
+            <article class="card-inner">
+              <span class="badge">Exemple</span>
+              <div class="card-ill"><svg aria-hidden="true"><use href="#i-burger"/></svg></div>
+              <p class="card-cat">Burger</p>
+              <h3 class="card-title">Le Gros Chevalier</h3>
+              <p class="card-desc">Armure complète, appétit de héros.</p>
+              <p class="card-price">Prix <span class="ph">[à compléter]</span></p>
+            </article>
+          </li>
+          <li class="card" data-cat="sides" style="--r:-4deg; --tone:#F6B926">
+            <article class="card-inner">
+              <span class="badge">Exemple</span>
+              <div class="card-ill"><svg aria-hidden="true"><use href="#i-fries"/></svg></div>
+              <p class="card-cat">Side</p>
+              <h3 class="card-title">Les Frites des Remparts</h3>
+              <p class="card-desc">Dorées, à partager… ou pas.</p>
+              <p class="card-price">Prix <span class="ph">[à compléter]</span></p>
+            </article>
+          </li>
+          <li class="card" data-cat="tacos" style="--r:2deg; --tone:#F0412F">
+            <article class="card-inner">
+              <span class="badge">Exemple</span>
+              <div class="card-ill"><svg aria-hidden="true"><use href="#i-tacos"/></svg></div>
+              <p class="card-cat">Tacos</p>
+              <h3 class="card-title">Le Tacos Catapulte</h3>
+              <p class="card-desc">Lancé direct vers votre faim.</p>
+              <p class="card-price">Prix <span class="ph">[à compléter]</span></p>
+            </article>
+          </li>
+          <li class="card" data-cat="sides" style="--r:-2deg; --tone:#FFF3DC">
+            <article class="card-inner">
+              <span class="badge">Exemple</span>
+              <div class="card-ill"><svg aria-hidden="true"><use href="#i-nuggets"/></svg></div>
+              <p class="card-cat">Side</p>
+              <h3 class="card-title">Les Boulets de Canon</h3>
+              <p class="card-desc">Petits, ronds, redoutables.</p>
+              <p class="card-price">Prix <span class="ph">[à compléter]</span></p>
+            </article>
+          </li>
+          <li class="card" data-cat="desserts" style="--r:3deg; --tone:#F7C6D0">
+            <article class="card-inner">
+              <span class="badge">Exemple</span>
+              <div class="card-ill"><svg aria-hidden="true"><use href="#i-cookie"/></svg></div>
+              <p class="card-cat">Dessert</p>
+              <h3 class="card-title">Le Cookie du Roi</h3>
+              <p class="card-desc">Une couronne de pépites.</p>
+              <p class="card-price">Prix <span class="ph">[à compléter]</span></p>
+            </article>
+          </li>
+          <li class="card" data-cat="desserts" style="--r:-3.5deg; --tone:#F6B926">
+            <article class="card-inner">
+              <span class="badge">Exemple</span>
+              <div class="card-ill"><svg aria-hidden="true"><use href="#i-sundae"/></svg></div>
+              <p class="card-cat">Dessert</p>
+              <h3 class="card-title">Le Sundae des Douves</h3>
+              <p class="card-desc">On plonge dedans, cuillère en avant.</p>
+              <p class="card-price">Prix <span class="ph">[à compléter]</span></p>
+            </article>
+          </li>
+          <li class="card" data-cat="boissons" style="--r:2deg; --tone:#4DB357">
+            <article class="card-inner">
+              <span class="badge">Exemple</span>
+              <div class="card-ill"><svg aria-hidden="true"><use href="#i-soda"/></svg></div>
+              <p class="card-cat">Boisson</p>
+              <h3 class="card-title">La Potion Fraîche</h3>
+              <p class="card-desc">Bien glacée, sans sortilège.</p>
+              <p class="card-price">Prix <span class="ph">[à compléter]</span></p>
+            </article>
+          </li>
+          <li class="card" data-cat="boissons" style="--r:-2.5deg; --tone:#F0412F">
+            <article class="card-inner">
+              <span class="badge">Exemple</span>
+              <div class="card-ill"><svg aria-hidden="true"><use href="#i-shake"/></svg></div>
+              <p class="card-cat">Boisson</p>
+              <h3 class="card-title">Le Shake du Dragon</h3>
+              <p class="card-desc">Épais, crémeux, à la paille.</p>
+              <p class="card-price">Prix <span class="ph">[à compléter]</span></p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== TROIS MODES ========== -->
+    <section class="modes" id="commander" aria-labelledby="modes-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker kicker--ink">Comme vous voulez</p>
+          <h2 class="h2" id="modes-title">Trois façons de croquer</h2>
+        </div>
+
+        <div class="tabs">
+          <div class="tablist" role="tablist" aria-label="Modes de service">
+            <span class="tab-indicator" aria-hidden="true"></span>
+            <button class="tab" role="tab" type="button" id="tab-surplace" aria-selected="true" aria-controls="panel-surplace" tabindex="0">
+              <span class="tab-ico" aria-hidden="true">🍽️</span> Sur place
+            </button>
+            <button class="tab" role="tab" type="button" id="tab-emporter" aria-selected="false" aria-controls="panel-emporter" tabindex="-1">
+              <span class="tab-ico" aria-hidden="true">🛍️</span> À emporter
+            </button>
+            <button class="tab" role="tab" type="button" id="tab-livraison" aria-selected="false" aria-controls="panel-livraison" tabindex="-1">
+              <span class="tab-ico tab-ico--wiggle" aria-hidden="true">🛵</span> Livraison
+            </button>
+          </div>
+
+          <div class="scooter-lane" aria-hidden="true">
+            <svg class="scooter" viewBox="0 0 240 150">
+              <g class="sc-lines" stroke="#1A1410" stroke-width="5" stroke-linecap="round" opacity=".55">
+                <path d="M2 66 h28 M0 90 h20 M8 112 h22"/>
+              </g>
+              <g class="sc-puffs">
+                <circle class="puff" cx="30" cy="120" r="9" fill="#FFF3DC" stroke="#1A1410" stroke-width="3"/>
+                <circle class="puff" cx="22" cy="114" r="7" fill="#FFF3DC" stroke="#1A1410" stroke-width="3"/>
+                <circle class="puff" cx="14" cy="122" r="6" fill="#FFF3DC" stroke="#1A1410" stroke-width="3"/>
+              </g>
+              <g class="sc-body">
+                <rect x="28" y="38" width="56" height="50" rx="8" fill="#F6B926" stroke="#1A1410" stroke-width="5"/>
+                <path d="M44 80 V62 h-3 V52 h6 v4 h5 v-4 h6 v4 h5 v-4 h6 v10 h-3 V80 Z" fill="#D7261A" stroke="#1A1410" stroke-width="2.5" stroke-linejoin="round"/>
+                <path d="M36 118 Q36 88 78 88 H122 Q130 88 132 98 L136 118 Z" fill="#D7261A" stroke="#1A1410" stroke-width="5" stroke-linejoin="round"/>
+                <rect x="118" y="106" width="54" height="11" rx="5.5" fill="#1A1410"/>
+                <path d="M170 112 L186 52" stroke="#1A1410" stroke-width="11" stroke-linecap="round"/>
+                <path d="M170 112 L186 52" stroke="#D7261A" stroke-width="5" stroke-linecap="round"/>
+                <path d="M178 60 Q200 80 188 114 L172 114 Q182 86 170 64 Z" fill="#D7261A" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+                <circle cx="198" cy="64" r="6" fill="#F6B926" stroke="#1A1410" stroke-width="3"/>
+                <path d="M74 88 Q76 78 92 78 H124 Q132 78 130 88 Z" fill="#1A1410"/>
+                <!-- pilote -->
+                <path d="M104 82 L134 94 L152 108" fill="none" stroke="#1A1410" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M104 82 L112 46" stroke="#1A1410" stroke-width="20" stroke-linecap="round"/>
+                <path d="M104 82 L112 46" stroke="#FFF3DC" stroke-width="11" stroke-linecap="round"/>
+                <path d="M112 54 L150 60 L178 50" fill="none" stroke="#1A1410" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M112 54 L150 60 L178 50" fill="none" stroke="#FFF3DC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M174 50 L198 44" stroke="#1A1410" stroke-width="7" stroke-linecap="round"/>
+                <circle cx="118" cy="30" r="15" fill="#F3D9A8" stroke="#1A1410" stroke-width="4"/>
+                <path d="M102 30 Q102 10 120 10 Q138 10 136 30 Z" fill="#F6B926" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+                <path d="M124 22 H138" stroke="#1A1410" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="126" cy="33" r="2.5" fill="#1A1410"/>
+              </g>
+              <g class="sc-wheel sc-wheel--back">
+                <circle cx="60" cy="122" r="21" fill="#1A1410"/>
+                <circle cx="60" cy="122" r="9" fill="#FFF3DC"/>
+                <path d="M60 106 V113 M60 131 V138 M44 122 H51 M69 122 H76" stroke="#FFF3DC" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <g class="sc-wheel sc-wheel--front">
+                <circle cx="184" cy="122" r="21" fill="#1A1410"/>
+                <circle cx="184" cy="122" r="9" fill="#FFF3DC"/>
+                <path d="M184 106 V113 M184 131 V138 M168 122 H175 M193 122 H200" stroke="#FFF3DC" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-surplace" aria-labelledby="tab-surplace" tabindex="0">
+            <div class="panel-ill">
+              <svg viewBox="0 0 240 170" aria-hidden="true">
+                <ellipse cx="120" cy="158" rx="110" ry="8" fill="#1A1410" opacity=".18"/>
+                <rect x="8" y="118" width="224" height="26" rx="12" fill="#D7261A" stroke="#1A1410" stroke-width="5"/>
+                <use href="#i-soda" x="12" y="30" width="76" height="96"/>
+                <use href="#i-burger" x="74" y="36" width="96" height="96"/>
+                <use href="#i-fries" x="158" y="30" width="76" height="94"/>
+              </svg>
+            </div>
+            <div class="panel-copy">
+              <h3 class="h3">Posez-vous au donjon</h3>
+              <p>Une table, un plateau bien rempli et le temps de savourer, au 5&nbsp;rue Gambetta.</p>
+              <ul class="infolist">
+                <li><b>Places assises</b> <span class="ph">[à compléter]</span></li>
+                <li><b>Horaires</b> <span class="ph">[à compléter]</span></li>
+                <li><b>Adresse</b> 5 Rue Gambetta, 03130 Le Donjon</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-emporter" aria-labelledby="tab-emporter" tabindex="0" hidden>
+            <div class="panel-ill">
+              <svg viewBox="0 0 240 170" aria-hidden="true">
+                <ellipse cx="120" cy="160" rx="80" ry="7" fill="#1A1410" opacity=".18"/>
+                <g class="steam" fill="none" stroke="#1A1410" stroke-width="5" stroke-linecap="round" opacity=".6">
+                  <path d="M96 30 q-8 -10 0 -20 t0 -20" transform="translate(0 20)"/>
+                  <path d="M120 26 q-8 -10 0 -20 t0 -20" transform="translate(0 20)"/>
+                  <path d="M144 30 q-8 -10 0 -20 t0 -20" transform="translate(0 20)"/>
+                </g>
+                <path d="M96 66 Q96 40 120 40 Q144 40 144 66" fill="none" stroke="#1A1410" stroke-width="7" stroke-linecap="round"/>
+                <path d="M66 64 H174 L184 156 H56 Z" fill="#D9A066" stroke="#1A1410" stroke-width="6" stroke-linejoin="round"/>
+                <path d="M66 64 l9 10 9 -10 9 10 9 -10 9 10 9 -10 9 10 9 -10 9 10 9 -10 9 10 9 -10" fill="none" stroke="#1A1410" stroke-width="4" stroke-linejoin="round"/>
+                <use href="#i-tower" x="92" y="86" width="56" height="56"/>
+              </svg>
+            </div>
+            <div class="panel-copy">
+              <h3 class="h3">Sous le bras, direction la maison</h3>
+              <p>Vous commandez, on emballe, vous filez. Le donjon tient dans un sac.</p>
+              <ul class="infolist">
+                <li><b>Commande par téléphone</b> <span class="ph">[à compléter]</span></li>
+                <li><b>Commande en ligne</b> <span class="ph">[à compléter]</span></li>
+                <li><b>Retrait</b> 5 Rue Gambetta, 03130 Le Donjon</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="panel-livraison" aria-labelledby="tab-livraison" tabindex="0" hidden>
+            <div class="panel-ill">
+              <svg viewBox="0 0 240 170" aria-hidden="true">
+                <use href="#i-tower" x="6" y="70" width="70" height="70"/>
+                <g class="route" fill="#1A1410">
+                  <circle cx="82" cy="118" r="4.5"/><circle cx="98" cy="104" r="4.5"/><circle cx="116" cy="96" r="4.5"/><circle cx="134" cy="98" r="4.5"/><circle cx="150" cy="108" r="4.5"/><circle cx="164" cy="118" r="4.5"/>
+                </g>
+                <g class="house">
+                  <path d="M172 140 V102 L202 78 L232 102 V140 Z" fill="#FFF3DC" stroke="#1A1410" stroke-width="5" stroke-linejoin="round"/>
+                  <path d="M166 106 L202 74 L238 106" fill="none" stroke="#D7261A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="194" y="114" width="16" height="26" rx="3" fill="#8A4A22" stroke="#1A1410" stroke-width="4"/>
+                </g>
+                <g class="pin-bounce" transform="translate(190 20)">
+                  <path d="M12 0a12 12 0 0 0-12 12c0 9 12 24 12 24s12-15 12-24A12 12 0 0 0 12 0z" fill="#D7261A" stroke="#1A1410" stroke-width="4"/>
+                  <circle cx="12" cy="12" r="4.5" fill="#FFF3DC"/>
+                </g>
+                <ellipse cx="120" cy="150" rx="112" ry="6" fill="#1A1410" opacity=".15"/>
+              </svg>
+            </div>
+            <div class="panel-copy">
+              <h3 class="h3">Le donjon vient à vous</h3>
+              <p>Le scooter part du 5&nbsp;rue Gambetta et file jusqu’à votre porte.</p>
+              <ul class="infolist">
+                <li><b>Zone de livraison</b> <span class="ph">[à compléter]</span></li>
+                <li><b>Comment commander</b> <span class="ph">[à compléter]</span></li>
+                <li><b>Frais et minimum</b> <span class="ph">[à compléter]</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MARQUEE 2 ========== -->
+    <div class="marquee marquee--tomato" aria-hidden="true">
+      <div class="marquee-track" data-marquee="right">
+        <div class="marquee-group">
+          <span>On croque comme un roi</span><b>✦</b><span>Le p’tit château de la gourmandise</span><b>✦</b><span>Garde baissée, appétit levé</span><b>✦</b><span>Tout neuf au Donjon</span><b>✦</b>
+        </div>
+        <div class="marquee-group">
+          <span>On croque comme un roi</span><b>✦</b><span>Le p’tit château de la gourmandise</span><b>✦</b><span>Garde baissée, appétit levé</span><b>✦</b><span>Tout neuf au Donjon</span><b>✦</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== PHOTOS À VENIR ========== -->
+    <section class="photos grain" id="photos" aria-labelledby="photos-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker">Bientôt ici</p>
+          <h2 class="h2" id="photos-title">Les vraies photos arrivent</h2>
+          <p class="section-lead">Ces cadres accueilleront les photos de la maison&nbsp;: la façade, le comptoir, les plats.</p>
+        </div>
+        <div class="polaroids">
+          <figure class="polaroid" style="--r:-4deg" data-reveal>
+            <div class="photo-slot"><svg aria-hidden="true"><use href="#i-camera"/></svg><span>Photo à venir</span></div>
+            <figcaption>La façade, rue Gambetta</figcaption>
+          </figure>
+          <figure class="polaroid" style="--r:2deg" data-reveal>
+            <div class="photo-slot photo-slot--mustard"><svg aria-hidden="true"><use href="#i-camera"/></svg><span>Photo à venir</span></div>
+            <figcaption>Le burger signature</figcaption>
+          </figure>
+          <figure class="polaroid" style="--r:-1.5deg" data-reveal>
+            <div class="photo-slot photo-slot--cream"><svg aria-hidden="true"><use href="#i-camera"/></svg><span>Photo à venir</span></div>
+            <figcaption>L’équipe derrière le comptoir</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== INFOS ========== -->
+    <section class="infos on-red" id="infos" aria-labelledby="infos-title">
+      <div class="hero-dots" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker kicker--mustard">Infos pratiques</p>
+          <h2 class="h2" id="infos-title">Venez au donjon</h2>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card info-card--map" data-reveal>
+            <h3 class="h3">Adresse</h3>
+            <p class="info-address">5 Rue Gambetta<br>03130 Le Donjon</p>
+            <div class="mini-map">
+              <svg viewBox="0 0 320 170" role="img" aria-labelledby="map-title">
+                <title id="map-title">Plan illustratif, non à l’échelle, avec la tour du P’tit Donjon rue Gambetta</title>
+                <rect width="320" height="170" rx="14" fill="#FBE6C2"/>
+                <g stroke="#fff" stroke-linecap="round" fill="none">
+                  <path d="M-10 104 Q120 86 330 112" stroke-width="22"/>
+                  <path d="M96 -10 Q110 80 84 180" stroke-width="14"/>
+                  <path d="M236 -10 Q222 70 250 180" stroke-width="12"/>
+                </g>
+                <g stroke="#1A1410" stroke-opacity=".18" fill="none" stroke-width="2" stroke-dasharray="6 8">
+                  <path d="M-10 104 Q120 86 330 112"/>
+                </g>
+                <text x="140" y="124" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#1A1410" opacity=".7" transform="rotate(3 140 124)">Rue Gambetta</text>
+                <g class="map-pin" transform="translate(150 22)">
+                  <use href="#i-tower" x="0" y="0" width="62" height="62"/>
+                </g>
+                <ellipse cx="181" cy="96" rx="18" ry="5" fill="#1A1410" opacity=".25"/>
+              </svg>
+            </div>
+            <a class="btn btn--ink btn--sm" href="https://www.openstreetmap.org/search?query=5%20Rue%20Gambetta%2C%2003130%20Le%20Donjon" target="_blank" rel="noopener"><span><svg aria-hidden="true"><use href="#i-pin"/></svg> Itinéraire <span class="sr-only">(ouvre OpenStreetMap dans un nouvel onglet)</span></span></a>
+          </article>
+
+          <article class="info-card" data-reveal>
+            <h3 class="h3">Contact</h3>
+            <ul class="infolist">
+              <li><b>Téléphone</b> <span class="ph">[à compléter]</span></li>
+              <li><b>E-mail</b> <span class="ph">[à compléter]</span></li>
+              <li><b>Réseaux sociaux</b> <span class="ph">[à compléter]</span></li>
+              <li><b>Commande en ligne</b> <span class="ph">[à compléter]</span></li>
+            </ul>
+          </article>
+
+          <article class="info-card" data-reveal>
+            <h3 class="h3">Horaires</h3>
+            <table class="hours">
+              <caption class="sr-only">Horaires d’ouverture, à compléter</caption>
+              <tbody>
+                <tr><th scope="row">Lundi</th><td><span class="ph">[à compléter]</span></td></tr>
+                <tr><th scope="row">Mardi</th><td><span class="ph">[à compléter]</span></td></tr>
+                <tr><th scope="row">Mercredi</th><td><span class="ph">[à compléter]</span></td></tr>
+                <tr><th scope="row">Jeudi</th><td><span class="ph">[à compléter]</span></td></tr>
+                <tr><th scope="row">Vendredi</th><td><span class="ph">[à compléter]</span></td></tr>
+                <tr><th scope="row">Samedi</th><td><span class="ph">[à compléter]</span></td></tr>
+                <tr><th scope="row">Dimanche</th><td><span class="ph">[à compléter]</span></td></tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== PIED DE PAGE ========== -->
+  <footer class="site-footer on-dark">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg class="footer-mark" aria-hidden="true"><use href="#i-tower"/></svg>
+        <p class="footer-name">Le P’tit Donjon</p>
+      </div>
+      <div class="footer-legal">
+        <p>SAS Le P’tit Donjon · SIREN 131&nbsp;773&nbsp;418</p>
+        <p>5 Rue Gambetta, 03130 Le Donjon</p>
+        <p><a href="mentions-legales.html">Mentions légales</a></p>
+      </div>
+      <p class="footer-demo">Maquette de démonstration — contenus à valider avec l’établissement.</p>
+    </div>
+  </footer>
+
+  <!-- Bouton d'appel sticky (mobile) — remplacer href="#infos" par href="tel:+33XXXXXXXXX" -->
+  <div class="call-sticky" id="call-sticky">
+    <a class="call-sticky-btn" href="#infos">
+      <span class="call-ring" aria-hidden="true"></span>
+      <svg aria-hidden="true"><use href="#i-phone"/></svg>
+      <span>Appeler <small>[à compléter]</small></span>
+    </a>
+    <a class="call-sticky-alt" href="https://www.openstreetmap.org/search?query=5%20Rue%20Gambetta%2C%2003130%20Le%20Donjon" target="_blank" rel="noopener">
+      <svg aria-hidden="true"><use href="#i-pin"/></svg><span class="sr-only">Itinéraire (nouvel onglet)</span>
+    </a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js" defer></script>
+  <script src="script.js" defer></script>
+<div role="note" style="position:fixed;left:10px;bottom:10px;z-index:2147483647;pointer-events:none;font:600 11px/1.3 system-ui,sans-serif;letter-spacing:.02em;color:#fff;background:rgba(17,17,17,.78);padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)">Maquette de démonstration · site non officiel</div>
+</body>
+</html>
